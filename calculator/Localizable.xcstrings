@@ -1174,6 +1174,16 @@
         }
       }
     },
+    "Released in: 2026.07.27" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "发布时间：26年7月27日"
+          }
+        }
+      }
+    },
     "Roots: %@" : {
       "localizations" : {
         "zh-Hans" : {

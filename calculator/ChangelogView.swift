@@ -16,7 +16,7 @@ struct ChangelogView: View {
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
-                Text("Released in: 2026.07.26")
+                Text("Released in: 2026.07.27")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                 
