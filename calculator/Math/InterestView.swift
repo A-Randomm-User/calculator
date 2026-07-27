@@ -8,13 +8,20 @@
 import SwiftUI
 import Foundation
 
+enum InterestTarget {
+    case original
+    case rate
+    case year
+    case final
+    case none
+}
+
 struct InterestView: View {
     
     @State var original: Double? = nil
     @State var rate: Double? = nil
     @State var year: Double? = nil
     @State var final: Double? = nil
-    @State var target = ""
     @State var mode = ""
     @State var answer: Double? = nil
     @State var displayAnswer = ""
@@ -23,56 +30,81 @@ struct InterestView: View {
     @State var rateAnimate = false
     @State var yearAnimate = false
     @State var finalAnimate = false
+
+    @State private var target: InterestTarget = .none
     
+    var localizedTarget: String {
+        switch target {
+        case .original:
+            return String(localized: "Original Amount")
+        case .rate:
+            return String(localized: "Rate")
+        case .year:
+            return String(localized: "Year")
+        case .final:
+            return String(localized: "Final Amount")
+        case .none:
+            return String(localized: "None")
+        }
+    }
+
     func log(base: Double, value: Double) -> Double {
         return Foundation.log(value) / Foundation.log(base)
     }
     
-    func identifyFindTarget(original: Double, rate: Double, year: Double, final: Double) -> String {
+    func identifyFindTarget(original: Double, rate: Double, year: Double, final: Double) -> InterestTarget {
         if original == -1 && rate != -1 && year != -1 && final != -1 {
-            return "original"
+            return .original
         } else if rate == -1 && original != -1 && year != -1 && final != -1 {
-            return "rate"
+            return .rate
         } else if year == -1 && rate != -1 && original != -1 && final != -1 {
-            return "year"
+            return .year
         } else if final == -1 && rate != -1 && year != -1 && original != -1 {
-            return "final"
+            return .final
         }
-        return "nothing"
+        return .none
     }
     
-    func simpleInterest(target: String, original: Double, rate: Double, year: Double, final: Double) -> Double {
-        if target == "original" {
-            let ans = final / ((rate / 100) * year)
-            return ans
-        } else if target == "rate" {
-            let ans = (final / (original * year)) * 100
-            return ans
-        } else if target == "year" {
-            let ans = final / (original * (rate / 100))
-            return ans
-        } else if target == "final" {
-            let ans = original * (rate / 100) * year
-            return ans
+    func simpleInterest(target: InterestTarget, original: Double, rate: Double, year: Double, final: Double) -> Double {
+        switch target {
+        case .original:
+            return final / ((rate / 100) * year)
+
+        case .rate:
+            return (final / (original * year)) * 100
+
+        case .year:
+            return final / (original * (rate / 100))
+
+        case .final:
+            return original * (rate / 100) * year
+
+        case .none:
+            return 0
         }
-        return 0.0
     }
     
-    func compoundInterest(target: String, original: Double, rate: Double, year: Double, final: Double) -> Double {
-        if target == "original" {
+    func compoundInterest(target: InterestTarget, original: Double, rate: Double, year: Double, final: Double) -> Double {
+        switch target {
+        case .original:
             let ans = final / pow(1 + (rate / 100), year)
             return ans
-        } else if target == "rate" {
+            
+        case .rate:
             let ans = 100 * (pow(((final / original)), 1 / year) - 1)
             return ans
-        } else if target == "year" {
+            
+        case .year:
             let ans = log(base: (1 + (rate / 100)), value: (final / original))
             return ans
-        } else if target == "final" {
+            
+        case .final:
             let ans = original * pow((1 + (rate / 100)), year)
             return ans
+            
+        case .none:
+            return 0
         }
-        return 0.0
     }
     
     var body: some View {
@@ -307,7 +339,7 @@ struct InterestView: View {
                         Button("Find unknown") {
                             if let original, let rate, let year, let final {
                                 target = identifyFindTarget(original: original, rate: rate, year: year, final: final)
-                                if target != "nothing" && mode == "simple" {
+                                if target != .none && mode == "simple" {
                                     answer = simpleInterest(target: target, original: original, rate: rate, year: year, final: final)
                                     if let answer {
                                         displayAnswer = String((answer * 100).rounded() / 100)
@@ -320,12 +352,12 @@ struct InterestView: View {
                         Button("Find unknown") {
                             if let original, let rate, let year, let final {
                                 target = identifyFindTarget(original: original, rate: rate, year: year, final: final)
-                                if target != "nothing" && mode == "simple" {
+                                if target != .none && mode == "simple" {
                                     answer = simpleInterest(target: target, original: original, rate: rate, year: year, final: final)
                                     if let answer {
                                         displayAnswer = String(format: "%.2f", answer)
                                     }
-                                } else if target != "nothing" && mode == "compound" {
+                                } else if target != .none && mode == "compound" {
                                     answer = compoundInterest(target: target, original: original, rate: rate, year: year, final: final)
                                     if let answer {
                                         displayAnswer = String(format: "%.2f", answer)
@@ -337,12 +369,23 @@ struct InterestView: View {
                     }
                 }
                 
-                Text("Finding: \(target)")
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .opacity(0.10)
+                        .padding(.horizontal)
+                    VStack(alignment: .leading) {
+                        Text("Finding: \(localizedTarget)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal)
+                        Text("Answer: \(displayAnswer)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal)
+                    }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
-                Text("Answer: \(displayAnswer)")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .padding(.horizontal, 10)
+                }
+                .padding(.horizontal, 1)
+                .frame(minHeight: 175)
                 
                 Spacer(minLength: 25)
                 

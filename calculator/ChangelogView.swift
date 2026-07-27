@@ -11,6 +11,52 @@ struct ChangelogView: View {
     var body: some View {
         ScrollView {
             VStack {
+                Text("Version 1.0, Build 11")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                Text("Released in: 2026.07.26")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Text("""
+                     This update added:
+                     1. New Icon
+                     2. Localization
+                     
+                     Fixed:
+                     1. No Button for Simultaneous
+                     2. Length should include displacement
+                     3. TextField length unification for iOS 17 & 18 on Simultaneous
+                     """)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Spacer(minLength: 50)
+                
+                Text("Version 1.0, Build 10")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                Text("Released in: 2026.07.26")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Text("""
+                     This update added:
+                     1. Finding 2 unknowns of Linear Simultaneous Equation
+                     2. Length Conversion
+                     3. Rounding up values on other modes
+                     4. Distinguish modes in main menu
+                     5. Improved entering values in in Sequence as keyboard users now can return to go to next TextField
+                     """)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Spacer(minLength: 50)
+                
                 Text("Version 1.0, Build 9")
                     .font(.title3)
                     .fontWeight(.bold)

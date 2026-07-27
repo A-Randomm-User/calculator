@@ -13,10 +13,12 @@ struct QuadraticView: View {
     @State var a: Double? = nil
     @State var b: Double? = nil
     @State var c: Double? = nil
+    
     @State var discriminant = ""
     @State var displayDiscriminant = ""
     @State var solutionText = ""
     @State var turningPoint = ""
+    
     @State var animateSymbolA = false
     @State var animateSymbolB = false
     @State var animateSymbolC = false
@@ -53,13 +55,16 @@ struct QuadraticView: View {
                 } else if discriminant == "1" {
                     let fractionUp = -b + sqrt(value)
                     let solution = fractionUp / (2 * a)
-                    solutionText = "x = \(solution)"
+                    let roundedSolution = (solution * 100).rounded() / 100
+                    solutionText = "x = \(roundedSolution)"
                 } else if discriminant == "2" {
                     let fractionUpPos = -b + sqrt(value)
                     let fractionUpNeg = -b - sqrt(value)
                     let solution1 = fractionUpPos / (2 * a)
                     let solution2 = fractionUpNeg / (2 * a)
-                    solutionText = "x = \(solution1) or x = \(solution2)"
+                    let roundedSolution1 = (solution1 * 100).rounded() / 100
+                    let roundedSolution2 = (solution2 * 100).rounded() / 100
+                    solutionText = "x = \(roundedSolution1) or x = \(roundedSolution2)"
                 }
             } else {
                 solutionText = "Not a quadratic"
@@ -73,7 +78,9 @@ struct QuadraticView: View {
             if a != 0 {
                 let x = (-b / 2) * a
                 let y = a * pow(x, 2) + b * x + c
-                turningPoint = "(\(x),\(y))"
+                let roundedX = (x * 100).rounded() / 100
+                let roundedY = (y * 100).rounded() / 100
+                turningPoint = "(\(roundedX),\(roundedY))"
             } else {
                 turningPoint = "Not a quadratic"
             }

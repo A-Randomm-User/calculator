@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="calculator/InfoPlist.xcstrings" source-language="en" target-language="zh-HK" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="26.6" build-num="17F113"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName" xml:space="preserve">
+        <source>Da Calculator</source>
+        <note>Bundle display name</note>
+      </trans-unit>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>calculator</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="calculator/Localizable.xcstrings" source-language="en" target-language="zh-HK" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="26.6" build-num="17F113"/>
+    </header>
+    <body>
+      <trans-unit id="%@ Copy to Clipboard" xml:space="preserve">
+        <source>%@ Copy to Clipboard</source>
+        <target state="translated">%@ 複製到剪貼簿</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="%@ Start conversion" xml:space="preserve">
+        <source>%@ Start conversion</source>
+        <target state="translated">%@ 開始轉換</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="About This Build" xml:space="preserve">
+        <source>About This Build</source>
+        <target state="translated">關於此版本</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Answer: %@" xml:space="preserve">
+        <source>Answer: %@</source>
+        <target state="translated">答案：%@</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Binary %@ Denary" xml:space="preserve">
+        <source>Binary %@ Denary</source>
+        <target state="translated">二進制 %@ 十進制</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Binary &amp; Denary Conversion" xml:space="preserve">
+        <source>Binary &amp; Denary Conversion</source>
+        <target state="translated">二進制與十進制轉換</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Binary to Denary" xml:space="preserve">
+        <source>Binary to Denary</source>
+        <target state="translated">二進制轉十進制</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Calculator" xml:space="preserve">
+        <source>Calculator</source>
+        <target state="translated">計算機</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Centimetres (cm)" xml:space="preserve">
+        <source>Centimetres (cm)</source>
+        <target state="translated">厘米 (cm)</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Click %@ to set it as unknown, &quot;-1&quot; means unknown" xml:space="preserve">
+        <source>Click %@ to set it as unknown, "-1" means unknown</source>
+        <target state="translated">點擊 %@ 將其設定為未知值，「-1」代表未知值</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Compound Interest" xml:space="preserve">
+        <source>Compound Interest</source>
+        <target state="translated">複利</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Conversion" xml:space="preserve">
+        <source>Conversion</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Convert" xml:space="preserve">
+        <source>Convert</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Convert units in length" xml:space="preserve">
+        <source>Convert units in length</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Created by Aaron" xml:space="preserve">
+        <source>Created by Aaron</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Current Mode: %@" xml:space="preserve">
+        <source>Current Mode: %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Current mode: %@" xml:space="preserve">
+        <source>Current mode: %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Decimal points are ignored automatically" xml:space="preserve">
+        <source>Decimal points are ignored automatically</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Decimetres (dm)" xml:space="preserve">
+        <source>Decimetres (dm)</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Default is 1" xml:space="preserve">
+        <source>Default is 1</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Denary to Binary" xml:space="preserve">
+        <source>Denary to Binary</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Discriminant: %@" xml:space="preserve">
+        <source>Discriminant: %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Do not include the original amount in the final amount in Simple Interest" xml:space="preserve">
+        <source>Do not include the original amount in the final amount in Simple Interest</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for a₁" xml:space="preserve">
+        <source>Enter for a₁</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for a₂" xml:space="preserve">
+        <source>Enter for a₂</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for b" xml:space="preserve">
+        <source>Enter for b</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for b₁" xml:space="preserve">
+        <source>Enter for b₁</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for b₂" xml:space="preserve">
+        <source>Enter for b₂</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for c" xml:space="preserve">
+        <source>Enter for c</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for c₁" xml:space="preserve">
+        <source>Enter for c₁</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for c₂" xml:space="preserve">
+        <source>Enter for c₂</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for final amount" xml:space="preserve">
+        <source>Enter for final amount</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for n₁" xml:space="preserve">
+        <source>Enter for n₁</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for n₂" xml:space="preserve">
+        <source>Enter for n₂</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for n₃" xml:space="preserve">
+        <source>Enter for n₃</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for n₄" xml:space="preserve">
+        <source>Enter for n₄</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for n₅" xml:space="preserve">
+        <source>Enter for n₅</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for original amount" xml:space="preserve">
+        <source>Enter for original amount</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for rate" xml:space="preserve">
+        <source>Enter for rate</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter for year" xml:space="preserve">
+        <source>Enter for year</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter input" xml:space="preserve">
+        <source>Enter input</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Enter input:" xml:space="preserve">
+        <source>Enter input:</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Final Amount" xml:space="preserve">
+        <source>Final Amount</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Find Discriminant" xml:space="preserve">
+        <source>Find Discriminant</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Find Solution" xml:space="preserve">
+        <source>Find Solution</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Find Turning Point" xml:space="preserve">
+        <source>Find Turning Point</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Find nth Term" xml:space="preserve">
+        <source>Find nth Term</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Find nth term" xml:space="preserve">
+        <source>Find nth term</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Find nth term in Sequence" xml:space="preserve">
+        <source>Find nth term in Sequence</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Find unknown" xml:space="preserve">
+        <source>Find unknown</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Find unknown on Simple / Compound Interest" xml:space="preserve">
+        <source>Find unknown on Simple / Compound Interest</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Finding: %@" xml:space="preserve">
+        <source>Finding: %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Foot (ft)" xml:space="preserve">
+        <source>Foot (ft)</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Identify Sequence" xml:space="preserve">
+        <source>Identify Sequence</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Inch (in)" xml:space="preserve">
+        <source>Inch (in)</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Interest" xml:space="preserve">
+        <source>Interest</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Kilometres (km)" xml:space="preserve">
+        <source>Kilometres (km)</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Length Conversion" xml:space="preserve">
+        <source>Length Conversion</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Math" xml:space="preserve">
+        <source>Math</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Metres (m)" xml:space="preserve">
+        <source>Metres (m)</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Miles (mi)" xml:space="preserve">
+        <source>Miles (mi)</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Milimetres (mm)" xml:space="preserve">
+        <source>Milimetres (mm)</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="None" xml:space="preserve">
+        <source>None</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Original Amount" xml:space="preserve">
+        <source>Original Amount</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Output: &#10;%@" xml:space="preserve">
+        <source>Output: 
+%@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Output: %@" xml:space="preserve">
+        <source>Output: %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Quadratic" xml:space="preserve">
+        <source>Quadratic</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Rate" xml:space="preserve">
+        <source>Rate</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Released in: 2026.07.23" xml:space="preserve">
+        <source>Released in: 2026.07.23</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Released in: 2026.07.24" xml:space="preserve">
+        <source>Released in: 2026.07.24</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Released in: 2026.07.26" xml:space="preserve">
+        <source>Released in: 2026.07.26</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Roots: %@" xml:space="preserve">
+        <source>Roots: %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Select Conversion mode by clicking &quot;Select mode&quot;" xml:space="preserve">
+        <source>Select Conversion mode by clicking "Select mode"</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Select mode" xml:space="preserve">
+        <source>Select mode</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Sequence Type: %@" xml:space="preserve">
+        <source>Sequence Type: %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Simple Interest" xml:space="preserve">
+        <source>Simple Interest</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Simple interest answer for final does not include the original amount" xml:space="preserve">
+        <source>Simple interest answer for final does not include the original amount</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Solution: %@" xml:space="preserve">
+        <source>Solution: %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Solve" xml:space="preserve">
+        <source>Solve</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Solve 2 unknown Linear Simultaneous Equation" xml:space="preserve">
+        <source>Solve 2 unknown Linear Simultaneous Equation</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Solve 2 unknowns of Linear Simultaneous Equation" xml:space="preserve">
+        <source>Solve 2 unknowns of Linear Simultaneous Equation</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Solve Quadratic Equation" xml:space="preserve">
+        <source>Solve Quadratic Equation</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="This update added:&#10;1. Binary to Denary and inversely conversion&#10;2. Adaptation to iOS 26 Liquid Glass" xml:space="preserve">
+        <source>This update added:
+1. Binary to Denary and inversely conversion
+2. Adaptation to iOS 26 Liquid Glass</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="This update added:&#10;1. Binary to Denary and inversely conversion&#10;2. Adaptation to iOS 26 Liquid Glass&#10;&#10;Known Issues:&#10;1. Conversion does not convert negative numbers&#10;2. Decimal point can be entered in Conversion and will return a wrong value" xml:space="preserve">
+        <source>This update added:
+1. Binary to Denary and inversely conversion
+2. Adaptation to iOS 26 Liquid Glass
+
+Known Issues:
+1. Conversion does not convert negative numbers
+2. Decimal point can be entered in Conversion and will return a wrong value</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="This update added:&#10;1. Finding 2 unknowns of Linear Simultaneous Equation&#10;2. Length Conversion&#10;3. Rounding up values on other modes&#10;4. Distinguish modes in main menu&#10;5. Improved entering values in in Sequence as keyboard users now can return to go to next TextField" xml:space="preserve">
+        <source>This update added:
+1. Finding 2 unknowns of Linear Simultaneous Equation
+2. Length Conversion
+3. Rounding up values on other modes
+4. Distinguish modes in main menu
+5. Improved entering values in in Sequence as keyboard users now can return to go to next TextField</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="This update added:&#10;1. Finding unknown from Simple or Compound interest&#10;2. New Icon" xml:space="preserve">
+        <source>This update added:
+1. Finding unknown from Simple or Compound interest
+2. New Icon</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="This update added:&#10;1. New Icon&#10;&#10;Fixed:&#10;1. No Button for Simultaneous&#10;2. Length should include displacement&#10;3. TextField length unification for iOS 17 &amp; 18 on Simultaneous" xml:space="preserve">
+        <source>This update added:
+1. New Icon
+
+Fixed:
+1. No Button for Simultaneous
+2. Length should include displacement
+3. TextField length unification for iOS 17 &amp; 18 on Simultaneous</source>
+        <target state="translated">此更新新增：
+1. 新圖示
+
+修正：
+1. 同時方程沒有按鈕
+2. 長度應包括位移
+3. 在同時方程中統一 iOS 17 與 iOS 18 的 TextField 長度</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="This update added:&#10;1. New Icon&#10;2. Localization&#10;&#10;Fixed:&#10;1. No Button for Simultaneous&#10;2. Length should include displacement&#10;3. TextField length unification for iOS 17 &amp; 18 on Simultaneous" xml:space="preserve">
+        <source>This update added:
+1. New Icon
+2. Localization
+
+Fixed:
+1. No Button for Simultaneous
+2. Length should include displacement
+3. TextField length unification for iOS 17 &amp; 18 on Simultaneous</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Turning Point: %@" xml:space="preserve">
+        <source>Turning Point: %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Unit (1)" xml:space="preserve">
+        <source>Unit (1)</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Unit (1): %@&#10;Unit (2): %@" xml:space="preserve">
+        <source>Unit (1): %1$@
+Unit (2): %2$@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Unit (2)" xml:space="preserve">
+        <source>Unit (2)</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Version 1.0, Build 7" xml:space="preserve">
+        <source>Version 1.0, Build 7</source>
+        <target state="translated">版本 1.0，版本編號 7</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Version 1.0, Build 8" xml:space="preserve">
+        <source>Version 1.0, Build 8</source>
+        <target state="translated">版本 1.0，版本編號 8</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Version 1.0, Build 9" xml:space="preserve">
+        <source>Version 1.0, Build 9</source>
+        <target state="translated">版本 1.0，版本編號 9</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Version 1.0, Build 10" xml:space="preserve">
+        <source>Version 1.0, Build 10</source>
+        <target state="translated">版本 1.0，版本編號 10</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Version 1.0, Build 11" xml:space="preserve">
+        <source>Version 1.0, Build 11</source>
+        <target state="translated">版本 1.0，版本編號 11</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Yard (yd)" xml:space="preserve">
+        <source>Yard (yd)</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Year" xml:space="preserve">
+        <source>Year</source>
+        <target state="translated">年</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="a: " xml:space="preserve">
+        <source>a: </source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="a₁ + b₁ = c₁&#10;a₂ + b₂ = c₂" xml:space="preserve">
+        <source>a₁ + b₁ = c₁
+a₂ + b₂ = c₂</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="a₁:" xml:space="preserve">
+        <source>a₁:</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="a₂:" xml:space="preserve">
+        <source>a₂:</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="b: " xml:space="preserve">
+        <source>b: </source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="b₁:" xml:space="preserve">
+        <source>b₁:</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="b₂:" xml:space="preserve">
+        <source>b₂:</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="c: " xml:space="preserve">
+        <source>c: </source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="c₁" xml:space="preserve">
+        <source>c₁</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="c₂" xml:space="preserve">
+        <source>c₂</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="nth Term: %@" xml:space="preserve">
+        <source>nth Term: %@</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="n₁" xml:space="preserve">
+        <source>n₁</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="n₂" xml:space="preserve">
+        <source>n₂</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="n₃" xml:space="preserve">
+        <source>n₃</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="n₄" xml:space="preserve">
+        <source>n₄</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="n₅" xml:space="preserve">
+        <source>n₅</source>
+        <note/>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

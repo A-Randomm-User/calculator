@@ -24,6 +24,12 @@ struct SequenceView: View {
     @State var animateSymbol4 = false
     @State var animateSymbol5 = false
     
+    enum Field: Hashable {
+        case n1, n2, n3, n4, n5
+    }
+
+    @FocusState private var focusedField: Field?
+    
     func identifySequence() {
         if let N1 = n1, let N2 = n2, let N3 = n3, let N4 = n4, let N5 = n5 {
             let seq11 = N2 - N1
@@ -157,10 +163,16 @@ struct SequenceView: View {
                 Text("Enter for n₁")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
+                    .padding(.vertical, -10)
                 
                 HStack {
                     TextField("n₁", value: $n1, format: .number)
                         .keyboardType(.decimalPad)
+                        .focused($focusedField, equals: .n1)
+                            .submitLabel(.next)
+                            .onSubmit {
+                                focusedField = .n2
+                            }
                         .padding(.horizontal, 30)
                         .background {
                             if #available(iOS 26.0, *) {
@@ -220,10 +232,16 @@ struct SequenceView: View {
                 Text("Enter for n₂")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
+                    .padding(.vertical, -10)
 
                 HStack {
                     TextField("n₂", value: $n2, format: .number)
                         .keyboardType(.decimalPad)
+                        .focused($focusedField, equals: .n2)
+                            .submitLabel(.next)
+                            .onSubmit {
+                                focusedField = .n3
+                            }
                         .padding(.horizontal, 30)
                         .background {
                             if #available(iOS 26.0, *) {
@@ -283,10 +301,16 @@ struct SequenceView: View {
                 Text("Enter for n₃")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
+                    .padding(.vertical, -10)
 
                 HStack {
                     TextField("n₃", value: $n3, format: .number)
                         .keyboardType(.decimalPad)
+                        .focused($focusedField, equals: .n3)
+                            .submitLabel(.next)
+                            .onSubmit {
+                                focusedField = .n4
+                            }
                         .padding(.horizontal, 30)
                         .background {
                             if #available(iOS 26.0, *) {
@@ -346,10 +370,16 @@ struct SequenceView: View {
                 Text("Enter for n₄")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
+                    .padding(.vertical, -10)
 
                 HStack {
                     TextField("n₄", value: $n4, format: .number)
                         .keyboardType(.decimalPad)
+                        .focused($focusedField, equals: .n4)
+                            .submitLabel(.next)
+                            .onSubmit {
+                                focusedField = .n5
+                            }
                         .padding(.horizontal, 30)
                         .background {
                             if #available(iOS 26.0, *) {
@@ -409,10 +439,16 @@ struct SequenceView: View {
                 Text("Enter for n₅")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
+                    .padding(.vertical, -10)
 
                 HStack {
                     TextField("n₅", value: $n5, format: .number)
                         .keyboardType(.decimalPad)
+                        .focused($focusedField, equals: .n5)
+                            .submitLabel(.done)
+                            .onSubmit {
+                                focusedField = nil
+                            }
                         .padding(.horizontal, 30)
                         .background {
                             if #available(iOS 26.0, *) {

@@ -1,0 +1,374 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ Copy to Clipboard" : {
+
+    },
+    "%@ Start conversion" : {
+
+    },
+    "a: " : {
+
+    },
+    "a₁ + b₁ = c₁\na₂ + b₂ = c₂" : {
+
+    },
+    "a₁:" : {
+
+    },
+    "a₂:" : {
+
+    },
+    "About This Build" : {
+
+    },
+    "Answer: %@" : {
+
+    },
+    "b: " : {
+
+    },
+    "b₁:" : {
+
+    },
+    "b₂:" : {
+
+    },
+    "Binary & Denary Conversion" : {
+
+    },
+    "Binary %@ Denary" : {
+
+    },
+    "Binary to Denary" : {
+
+    },
+    "c: " : {
+
+    },
+    "c₁" : {
+
+    },
+    "c₂" : {
+
+    },
+    "Calculator" : {
+      "extractionState" : "manual"
+    },
+    "Centimetres (cm)" : {
+
+    },
+    "Click %@ to set it as unknown, \"-1\" means unknown" : {
+
+    },
+    "Compound Interest" : {
+
+    },
+    "Conversion" : {
+      "extractionState" : "manual"
+    },
+    "Convert" : {
+
+    },
+    "Convert units in length" : {
+
+    },
+    "Created by Aaron" : {
+
+    },
+    "Current mode: %@" : {
+
+    },
+    "Current Mode: %@" : {
+
+    },
+    "Decimal points are ignored automatically" : {
+
+    },
+    "Decimetres (dm)" : {
+
+    },
+    "Default is 1" : {
+
+    },
+    "Denary to Binary" : {
+
+    },
+    "Discriminant: %@" : {
+
+    },
+    "Do not include the original amount in the final amount in Simple Interest" : {
+
+    },
+    "Enter for a₁" : {
+
+    },
+    "Enter for a₂" : {
+
+    },
+    "Enter for b" : {
+
+    },
+    "Enter for b₁" : {
+
+    },
+    "Enter for b₂" : {
+
+    },
+    "Enter for c" : {
+
+    },
+    "Enter for c₁" : {
+
+    },
+    "Enter for c₂" : {
+
+    },
+    "Enter for final amount" : {
+
+    },
+    "Enter for n₁" : {
+
+    },
+    "Enter for n₂" : {
+
+    },
+    "Enter for n₃" : {
+
+    },
+    "Enter for n₄" : {
+
+    },
+    "Enter for n₅" : {
+
+    },
+    "Enter for original amount" : {
+
+    },
+    "Enter for rate" : {
+
+    },
+    "Enter for year" : {
+
+    },
+    "Enter input" : {
+
+    },
+    "Enter input:" : {
+
+    },
+    "Final Amount" : {
+
+    },
+    "Find Discriminant" : {
+
+    },
+    "Find nth term" : {
+
+    },
+    "Find nth Term" : {
+
+    },
+    "Find nth term in Sequence" : {
+
+    },
+    "Find Solution" : {
+
+    },
+    "Find Turning Point" : {
+
+    },
+    "Find unknown" : {
+
+    },
+    "Find unknown on Simple / Compound Interest" : {
+
+    },
+    "Finding: %@" : {
+
+    },
+    "Foot (ft)" : {
+
+    },
+    "Identify Sequence" : {
+
+    },
+    "Inch (in)" : {
+
+    },
+    "Interest" : {
+
+    },
+    "Kilometres (km)" : {
+
+    },
+    "Length Conversion" : {
+
+    },
+    "Math" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Math"
+          }
+        }
+      }
+    },
+    "Metres (m)" : {
+
+    },
+    "Miles (mi)" : {
+
+    },
+    "Milimetres (mm)" : {
+
+    },
+    "n₁" : {
+
+    },
+    "n₂" : {
+
+    },
+    "n₃" : {
+
+    },
+    "n₄" : {
+
+    },
+    "n₅" : {
+
+    },
+    "None" : {
+
+    },
+    "nth Term: %@" : {
+
+    },
+    "Original Amount" : {
+
+    },
+    "Output: \n%@" : {
+
+    },
+    "Output: %@" : {
+
+    },
+    "Quadratic" : {
+
+    },
+    "Rate" : {
+
+    },
+    "Released in: 2026.07.23" : {
+
+    },
+    "Released in: 2026.07.24" : {
+
+    },
+    "Released in: 2026.07.26" : {
+
+    },
+    "Roots: %@" : {
+
+    },
+    "Select Conversion mode by clicking \"Select mode\"" : {
+
+    },
+    "Select mode" : {
+
+    },
+    "Sequence Type: %@" : {
+
+    },
+    "Simple Interest" : {
+
+    },
+    "Simple interest answer for final does not include the original amount" : {
+
+    },
+    "Solution: %@" : {
+
+    },
+    "Solve" : {
+
+    },
+    "Solve 2 unknown Linear Simultaneous Equation" : {
+
+    },
+    "Solve 2 unknowns of Linear Simultaneous Equation" : {
+
+    },
+    "Solve Quadratic Equation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solve Quadratic Equation"
+          }
+        }
+      }
+    },
+    "This update added:\n1. Binary to Denary and inversely conversion\n2. Adaptation to iOS 26 Liquid Glass" : {
+
+    },
+    "This update added:\n1. Binary to Denary and inversely conversion\n2. Adaptation to iOS 26 Liquid Glass\n\nKnown Issues:\n1. Conversion does not convert negative numbers\n2. Decimal point can be entered in Conversion and will return a wrong value" : {
+
+    },
+    "This update added:\n1. Finding 2 unknowns of Linear Simultaneous Equation\n2. Length Conversion\n3. Rounding up values on other modes\n4. Distinguish modes in main menu\n5. Improved entering values in in Sequence as keyboard users now can return to go to next TextField" : {
+
+    },
+    "This update added:\n1. Finding unknown from Simple or Compound interest\n2. New Icon" : {
+
+    },
+    "This update added:\n1. New Icon\n\nFixed:\n1. No Button for Simultaneous\n2. Length should include displacement\n3. TextField length unification for iOS 17 & 18 on Simultaneous" : {
+      "extractionState" : "stale"
+    },
+    "This update added:\n1. New Icon\n2. Localization\n\nFixed:\n1. No Button for Simultaneous\n2. Length should include displacement\n3. TextField length unification for iOS 17 & 18 on Simultaneous" : {
+
+    },
+    "Turning Point: %@" : {
+
+    },
+    "Unit (1)" : {
+
+    },
+    "Unit (1): %@\nUnit (2): %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unit (1): %1$@\nUnit (2): %2$@"
+          }
+        }
+      }
+    },
+    "Unit (2)" : {
+
+    },
+    "Version 1.0, Build 7" : {
+
+    },
+    "Version 1.0, Build 8" : {
+
+    },
+    "Version 1.0, Build 9" : {
+
+    },
+    "Version 1.0, Build 10" : {
+
+    },
+    "Version 1.0, Build 11" : {
+
+    },
+    "Yard (yd)" : {
+
+    },
+    "Year" : {
+
+    }
+  },
+  "version" : "1.2"
+}
