@@ -9,13 +9,46 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack(alignment: .leading, spacing: 12) {
+                Text("Math")
+                    .font(.title3)
+                
+                NavigationLink("Find unknown on Simple / Compound Interest") {
+                    InterestView()
+                }
+
+                NavigationLink("Solve Quadratic Equation") {
+                    QuadraticView()
+                }
+
+                NavigationLink("Find nth term in Sequence") {
+                    SequenceView()
+                }
+
+                Text("Computer Science")
+                    .font(.title3)
+
+                NavigationLink("Conversion of Binary to Denary") {
+                    BinaryDenaryView()
+                }
+
+                Spacer()
+
+                NavigationLink("About Build 9") {
+                    ChangelogView()
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
+
+            .navigationTitle("Calculator")
         }
-        .padding()
+        
+        VStack {
+            Text("Version 1.0, Build 9")
+            Text("Created by Aaron")
+        }
     }
 }
 

@@ -1,0 +1,194 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "display-p3:0.90088,1.00000,0.96653,1.00000",
+      "display-p3:0.70270,0.90732,0.96783,1.00000"
+    ],
+    "orientation" : {
+      "start" : {
+        "x" : 0.5,
+        "y" : 0
+      },
+      "stop" : {
+        "x" : 0.5,
+        "y" : 0.7
+      }
+    }
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "image-name" : "Image 2.png",
+          "name" : "Image 2",
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              153.2460957812193,
+              73.88044425284636
+            ]
+          }
+        },
+        {
+          "image-name" : "Image 2.png",
+          "name" : "Image 2",
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              153.2460957812193,
+              222.93702330439476
+            ]
+          }
+        },
+        {
+          "image-name" : "Image 2.png",
+          "name" : "Image 2",
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              153.2460957812193,
+              -70.54869668380934
+            ]
+          }
+        }
+      ],
+      "name" : "ButtonOrange",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    },
+    {
+      "layers" : [
+        {
+          "glass" : true,
+          "image-name" : "Image.png",
+          "name" : "Image",
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              -166.00137977943018,
+              -70.54869668380934
+            ]
+          }
+        },
+        {
+          "image-name" : "Image.png",
+          "name" : "Image",
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              -166.00137977943018,
+              73.88044425284636
+            ]
+          }
+        },
+        {
+          "image-name" : "Image.png",
+          "name" : "Image",
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              -11.391367267011447,
+              73.88044425284636
+            ]
+          }
+        },
+        {
+          "image-name" : "Image.png",
+          "name" : "Image",
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              -166.00137977943018,
+              222.93702330439476
+            ]
+          }
+        },
+        {
+          "image-name" : "Image.png",
+          "name" : "Image",
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              -11.391367267011447,
+              222.93702330439476
+            ]
+          }
+        },
+        {
+          "image-name" : "Image.png",
+          "name" : "Image",
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              -11.391367267011447,
+              -70.54869668380934
+            ]
+          }
+        }
+      ],
+      "name" : "ButtonGray",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    },
+    {
+      "layers" : [
+        {
+          "image-name" : "Image 4.png",
+          "name" : "Image 4",
+          "position" : {
+            "scale" : 0.8,
+            "translation-in-points" : [
+              1.0729580108261985,
+              -120.63713663360322
+            ]
+          }
+        },
+        {
+          "image-name" : "Image 3.png",
+          "name" : "Image 3",
+          "position" : {
+            "scale" : 0.8,
+            "translation-in-points" : [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "name" : "Back",
+      "position" : {
+        "scale" : 1.9,
+        "translation-in-points" : [
+          0,
+          0
+        ]
+      },
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
