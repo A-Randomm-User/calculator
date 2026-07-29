@@ -11,6 +11,45 @@ struct ChangelogView: View {
     var body: some View {
         ScrollView {
             VStack {
+                Text("Version 1.0, Build 13")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                Text("Released in: 2026.07.30")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Text("""
+                     This update added:
+                     1. Conversion of Number systems
+                     2. Better use on Liquid Glass
+                     3. More localization
+                     """)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Spacer(minLength: 50)
+                
+                Text("Version 1.0, Build 12")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                Text("Released in: 2026.07.29")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Text("""
+                     This update added:
+                     1. More units to length conversion
+                     2. More localization
+                     """)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Spacer(minLength: 50)
+                
                 Text("Version 1.0, Build 11")
                     .font(.title3)
                     .fontWeight(.bold)

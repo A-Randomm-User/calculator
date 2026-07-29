@@ -7,12 +7,22 @@
 
 import SwiftUI
 
-struct CalculatorCommands: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct CalculatorCommands: Commands {
+    var body: some Commands {
+        CommandMenu("Math") {
+            
+            Button {
+                NotificationCenter.default.post(
+                    name: .openCalculator,
+                    object: "quadratic"
+                )
+            } label: {
+                Label(String(localized: "Quadratic"), systemImage: "function")
+            }
+        }
     }
 }
 
-#Preview {
-    CalculatorCommands()
+extension Notification.Name {
+    static let openCalculator = Notification.Name("openCalculator")
 }

@@ -1,6 +1,24 @@
 import SwiftUI
 
+struct CalculatorTextFieldStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(.horizontal, 30)
+            .padding(.vertical, 5)
+            .background {
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(.secondary.opacity(0.08))
+                    .padding(.horizontal, 10)
+            }
+    }
+}
+
 struct ContentView: View {
+    
+    @State private var selectedView: String?
+    @State var version = "1.0"
+    @State var build = "13"
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -64,9 +82,9 @@ struct ContentView: View {
                         .font(.title3)
 
                     NavigationLink {
-                        BinaryDenaryView()
+                        RadixView()
                     } label: {
-                        Text("Binary \(Image(systemName: "arrow.left.arrow.right")) Denary")
+                        Text("Convert Number System")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .multilineTextAlignment(.leading)
                             .padding()
@@ -98,7 +116,7 @@ struct ContentView: View {
                     Spacer(minLength: 20)
 
                     VStack {
-                        Text("Version 1.0, Build 11")
+                        Text("Version \(version), Build \(build)")
                         Text("Created by Aaron")
                     }
                     .frame(maxWidth: .infinity)
@@ -109,6 +127,26 @@ struct ContentView: View {
                 .padding()
             }
             .navigationTitle("Calculator")
+            
+            .onReceive(
+                NotificationCenter.default.publisher(
+                    for: .openCalculator
+                )
+            ) { notification in
+                
+                selectedView = notification.object as? String
+            }
+            
+            .navigationDestination(item: $selectedView) { value in
+                switch value {
+                    
+                case "quadratic":
+                    QuadraticView()
+                    
+                default:
+                    EmptyView()
+                }
+            }
         }
     }
 }

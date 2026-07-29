@@ -13,5 +13,8 @@ struct calculatorApp: App {
         WindowGroup {
             ContentView()
         }
+        .commands {
+            CalculatorCommands()
+        }
     }
 }

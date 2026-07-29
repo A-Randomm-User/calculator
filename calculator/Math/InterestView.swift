@@ -112,9 +112,9 @@ struct InterestView: View {
             VStack {
                 Text("Interest")
                     .font(.title)
-                    .fontWeight(.black)
+                    .fontWeight(.bold)
                 
-                Spacer()
+                Spacer(minLength: 20)
                 
                 Text("Click \(Image(systemName: "questionmark")) to set it as unknown, \"-1\" means unknown")
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -126,207 +126,103 @@ struct InterestView: View {
                     .padding(.horizontal)
                 
                 HStack(spacing: 0.1) {
-                    TextField("Enter for original amount", value: $original, format: .number)
+                    TextField("Original Amount", value: $original, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: original) {
                             answer = nil
                             displayAnswer = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                original = -1
-                                originalAnimate.toggle()
-                            } label: {
-                                Image(systemName: "questionmark")
-                                    .symbolEffect(
-                                        .bounce.down.byLayer,
-                                        options: .nonRepeating,
-                                        value: originalAnimate)
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                original = -1
-                                originalAnimate.toggle()
-                            } label: {
-                                Image(systemName: "questionmark")
-                                    .symbolEffect(
-                                        .bounce.down.byLayer,
-                                        options: .nonRepeating,
-                                        value: originalAnimate)
-                            }
-                            .padding()
-                        }
+                    Button {
+                        original = -1
+                        originalAnimate.toggle()
+                    } label: {
+                        Image(systemName: "questionmark")
+                            .symbolEffect(
+                                .bounce.down.byLayer,
+                                options: .nonRepeating,
+                                value: originalAnimate)
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
                 HStack(spacing: 0.1) {
-                    TextField("Enter for rate", value: $rate, format: .number)
+                    TextField("Interest Rate (%)", value: $rate, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: rate) {
                             answer = nil
                             displayAnswer = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                rate = -1
-                                rateAnimate.toggle()
-                            } label: {
-                                Image(systemName: "questionmark")
-                                    .symbolEffect(
-                                        .bounce.down.byLayer,
-                                        options: .nonRepeating,
-                                        value: rateAnimate)
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                rate = -1
-                                rateAnimate.toggle()
-                            } label: {
-                                Image(systemName: "questionmark")
-                                    .symbolEffect(
-                                        .bounce.down.byLayer,
-                                        options: .nonRepeating,
-                                        value: rateAnimate)
-                            }
-                            .padding()
-                        }
+                    Button {
+                        rate = -1
+                        rateAnimate.toggle()
+                    } label: {
+                        Image(systemName: "questionmark")
+                            .symbolEffect(
+                                .bounce.down.byLayer,
+                                options: .nonRepeating,
+                                value: rateAnimate)
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
                 HStack(spacing: 0.1) {
-                    TextField("Enter for year", value: $year, format: .number)
+                    TextField("Number of Years", value: $year, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: year) {
                             answer = nil
                             displayAnswer = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                year = -1
-                                yearAnimate.toggle()
-                            } label: {
-                                Image(systemName: "questionmark")
-                                    .symbolEffect(
-                                        .bounce.down.byLayer,
-                                        options: .nonRepeating,
-                                        value: yearAnimate)
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                year = -1
-                                yearAnimate.toggle()
-                            } label: {
-                                Image(systemName: "questionmark")
-                                    .symbolEffect(
-                                        .bounce.down.byLayer,
-                                        options: .nonRepeating,
-                                        value: yearAnimate)
-                            }
-                            .padding()
-                        }
+                    Button {
+                        year = -1
+                        yearAnimate.toggle()
+                    } label: {
+                        Image(systemName: "questionmark")
+                            .symbolEffect(
+                                .bounce.down.byLayer,
+                                options: .nonRepeating,
+                                value: yearAnimate)
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
                 HStack(spacing: 0.1) {
-                    TextField("Enter for final amount", value: $final, format: .number)
+                    TextField("Final Amount", value: $final, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: final) {
                             answer = nil
                             displayAnswer = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                final = -1
-                                finalAnimate.toggle()
-                            } label: {
-                                Image(systemName: "questionmark")
-                                    .symbolEffect(
-                                        .bounce.down.byLayer,
-                                        options: .nonRepeating,
-                                        value: finalAnimate)
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                final = -1
-                                finalAnimate.toggle()
-                            } label: {
-                                Image(systemName: "questionmark")
-                                    .symbolEffect(
-                                        .bounce.down.byLayer,
-                                        options: .nonRepeating,
-                                        value: finalAnimate)
-                            }
-                            .padding()
-                        }
+                    Button {
+                        final = -1
+                        finalAnimate.toggle()
+                    } label: {
+                        Image(systemName: "questionmark")
+                            .symbolEffect(
+                                .bounce.down.byLayer,
+                                options: .nonRepeating,
+                                value: finalAnimate)
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
                 Text("Do not include the original amount in the final amount in Simple Interest")
@@ -334,22 +230,11 @@ struct InterestView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                 
+                Spacer(minLength: 20)
+                
                 Group {
                     if #available(iOS 26.0, *) {
-                        Button("Find unknown") {
-                            if let original, let rate, let year, let final {
-                                target = identifyFindTarget(original: original, rate: rate, year: year, final: final)
-                                if target != .none && mode == "simple" {
-                                    answer = simpleInterest(target: target, original: original, rate: rate, year: year, final: final)
-                                    if let answer {
-                                        displayAnswer = String((answer * 100).rounded() / 100)
-                                    }
-                                }
-                            }
-                        }
-                        .buttonStyle(.glass)
-                    } else {
-                        Button("Find unknown") {
+                        Button {
                             if let original, let rate, let year, let final {
                                 target = identifyFindTarget(original: original, rate: rate, year: year, final: final)
                                 if target != .none && mode == "simple" {
@@ -364,28 +249,71 @@ struct InterestView: View {
                                     }
                                 }
                             }
+                        } label: {
+                            Text("Find unknown")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 5)
                         }
-                        .buttonStyle(.bordered)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .buttonStyle(.glassProminent)
+                    } else {
+                        Button {
+                            if let original, let rate, let year, let final {
+                                target = identifyFindTarget(original: original, rate: rate, year: year, final: final)
+                                if target != .none && mode == "simple" {
+                                    answer = simpleInterest(target: target, original: original, rate: rate, year: year, final: final)
+                                    if let answer {
+                                        displayAnswer = String(format: "%.2f", answer)
+                                    }
+                                } else if target != .none && mode == "compound" {
+                                    answer = compoundInterest(target: target, original: original, rate: rate, year: year, final: final)
+                                    if let answer {
+                                        displayAnswer = String(format: "%.2f", answer)
+                                    }
+                                }
+                            }
+                        } label: {
+                            Text("Find unknown")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 5)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .buttonStyle(.borderedProminent)
                     }
                 }
+                
+                Spacer(minLength: 20)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .opacity(0.10)
                         .padding(.horizontal)
                     VStack(alignment: .leading) {
-                        Text("Finding: \(localizedTarget)")
+                        Text("Unknown")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal)
-                        Text("Answer: \(displayAnswer)")
+                        Text("\(localizedTarget)")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal)
+                        
+                        Spacer(minLength: 30)
+                        
+                        Text("Answer")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal)
+                        Text("\(displayAnswer)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal)
+                        
+                        Spacer(minLength: 30)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, 13)
+                    .padding(.vertical, 10)
                 }
                 .padding(.horizontal, 1)
-                .frame(minHeight: 175)
                 
                 Spacer(minLength: 25)
                 

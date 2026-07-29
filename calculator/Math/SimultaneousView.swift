@@ -41,10 +41,10 @@ struct SimultaneousView: View {
             VStack {
                 Text("Solve 2 unknown Linear Simultaneous Equation")
                     .font(.title)
-                    .fontWeight(.black)
+                    .fontWeight(.bold)
                 
                 Text("a₁ + b₁ = c₁\na₂ + b₂ = c₂")
-                    .fontWeight(.bold)
+                    .fontWeight(.medium)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
                 
@@ -55,51 +55,27 @@ struct SimultaneousView: View {
                 HStack(spacing: 0.1) {
                     TextField("Enter for a₁", value: $a1, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: a1) {
                             answer = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = a1 {
-                                    a1 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = a1 {
-                                    a1 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: a1Animate
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = a1 {
+                            a1 = -value
                         }
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: a1Animate
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
                 Text("b₁:")
@@ -109,55 +85,27 @@ struct SimultaneousView: View {
                 HStack(spacing: 0.1) {
                     TextField("Enter for b₁", value: $b1, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: b1) {
                             answer = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = b1 {
-                                    b1 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: b1Animate
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = b1 {
-                                    b1 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: b1Animate
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = b1 {
+                            b1 = -value
                         }
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: b1Animate
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
                 Text("c₁")
@@ -168,55 +116,27 @@ struct SimultaneousView: View {
                 HStack(spacing: 0.1) {
                     TextField("Enter for c₁", value: $c1, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: c1) {
                         answer = ""
                     }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = c1 {
-                                    c1 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: c1Animate
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = c1 {
-                                    c1 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: c1Animate
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = c1 {
+                            c1 = -value
                         }
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: c1Animate
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
                 Text("a₂:")
@@ -226,51 +146,23 @@ struct SimultaneousView: View {
                 HStack(spacing: 0.1) {
                     TextField("Enter for a₂", value: $a2, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: a2) {
                             answer = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = a2 {
-                                    a2 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = a2 {
-                                    a2 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: a1Animate
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = a2 {
+                            a2 = -value
                         }
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
                 Text("b₂:")
@@ -280,55 +172,27 @@ struct SimultaneousView: View {
                 HStack(spacing: 0.1) {
                     TextField("Enter for b₂", value: $b2, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: b2) {
                             answer = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = b2 {
-                                    b2 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: b2Animate
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = b2 {
-                                    b2 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: b2Animate
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = b2 {
+                            b2 = -value
                         }
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: b2Animate
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
                 Text("c₂")
@@ -339,85 +203,72 @@ struct SimultaneousView: View {
                 HStack(spacing: 0.1) {
                     TextField("Enter for c₂", value: $c2, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: c2) {
                         answer = ""
                     }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = c2 {
-                                    c2 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: c2Animate
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = c2 {
-                                    c2 = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: c2Animate
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = c2 {
+                            c2 = -value
                         }
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: c2Animate
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
                 Group {
                     if #available(iOS 26.0, *) {
-                        Button("Solve") {
+                        Button {
                             FindSolution()
+                        } label: {
+                            Text("Find unknown")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 5)
                         }
-                        .buttonStyle(.glass)
-                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .buttonStyle(.glassProminent)
                     } else {
-                        Button("Solve") {
+                        Button {
                             FindSolution()
+                        } label: {
+                            Text("Find unknown")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 5)
                         }
-                        .buttonStyle(.bordered)
-                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .buttonStyle(.borderedProminent)
                     }
                 }
+                
+                Spacer(minLength: 20)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .opacity(0.10)
                         .padding(.horizontal)
                     VStack {
-                        Text("Solution: \(answer)")
+                        Text("Solution")
+                        Text("\(answer)")
+                        
+                        Spacer(minLength: 10)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 30)
+                    .padding(.vertical, 20)
                 }
                 .padding(.horizontal, 1)
-                .frame(minHeight: 140)
             }
         }
     }

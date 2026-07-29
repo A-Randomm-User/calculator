@@ -30,6 +30,9 @@
           }
         },
         {
+          "blend-mode" : "normal",
+          "fill" : "automatic",
+          "glass" : true,
           "image-name" : "Image 2.png",
           "name" : "Image 2",
           "position" : {

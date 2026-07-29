@@ -10,6 +10,9 @@ import SwiftUI
 struct LengthView: View {
     
     let units = [
+        "pm": 0.000000000001,
+        "nm": 0.000000001,
+        "µm": 0.000001,
         "mm": 0.001,
         "cm": 0.01,
         "dm": 0.1,
@@ -19,6 +22,13 @@ struct LengthView: View {
         "ft": 0.3048,
         "yd": 0.9144,
         "mi": 1609.344,
+        "nmi": 1852,
+        "fm": 1.828800164445711,
+        "fur": 201.168,
+        "AU": 149597870700,
+        "ly": 9460730472580800,
+        "pc": 30856775814913672.78913938,
+        "ld": 384402000,
     ]
     
     @State var initialUnit: String? = nil
@@ -34,7 +44,7 @@ struct LengthView: View {
             let metres = input * units[initialUnit]!
             let result = metres / units[wantedUnit]!
             
-            output = "\((result * 100).rounded() / 100)\(wantedUnit)"
+            output = "\((result * 10_000_000_000).rounded() / 10_000_000_000) \(wantedUnit)"
         }
     }
     
@@ -43,9 +53,11 @@ struct LengthView: View {
             VStack {
                 Text("Convert units in length")
                     .font(.title)
-                    .fontWeight(.black)
+                    .fontWeight(.bold)
                 
-                Text("Unit (1): \(initialUnit ?? "select")\nUnit (2): \(wantedUnit ?? "select")")
+                Spacer(minLength: 20)
+                
+                Text("Unit (1): \(initialUnit ?? String(localized: "Select"))\nUnit (2): \(wantedUnit ?? String(localized: "Select"))")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .multilineTextAlignment(.leading)
                     .padding(.horizontal)
@@ -53,103 +65,116 @@ struct LengthView: View {
                 HStack {
                     TextField("Enter input", value: $input, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: input) {
                             output = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = input {
-                                    input = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animate
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = input {
-                                    input = -value
-                                }
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animate
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = input {
+                            input = -value
                         }
+                        
+                        animate.toggle()
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: animate
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
+                
+                Spacer(minLength: 20)
                 
                 Group {
                     if #available(iOS 26.0, *) {
-                        Button("Convert") {
+                        Button {
                             if initialUnit != nil && wantedUnit != nil && input != nil {
                                 convert()
                             } else {
                                 output = "Choose a unit / enter a value"
                             }
+                        } label: {
+                            Text("Convert")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 5)
                         }
-                        .padding()
-                        .buttonStyle(.glass)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .buttonStyle(.glassProminent)
                     } else {
-                        Button("Convert") {
+                        Button {
                             if initialUnit != nil && wantedUnit != nil && input != nil {
                                 convert()
                             } else {
                                 output = "Choose a unit / enter a value"
                             }
+                        } label: {
+                            Text("Convert")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 5)
                         }
-                        .padding()
-                        .buttonStyle(.bordered)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .buttonStyle(.borderedProminent)
                     }
                 }
                 
-                Text("Output: \(output)")
+                Spacer(minLength: 20)
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .opacity(0.10)
+                        .padding(.horizontal)
+                    VStack(alignment: .leading) {
+                        Text("Output")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal)
+                        Text("\(output)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal)
+                        
+                        Spacer(minLength: 20)
+                    }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
+                    .padding(.horizontal, 13)
+                    .padding(.vertical, 10)
+                }
+                .padding(.horizontal, 1)
             }
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 HStack(spacing: 20) {
                     Menu {
-                        Button("Milimetres (mm)") {
+                        Button("Picometer (pm)") {
+                            initialUnit = "pm"
+                        }
+                        Button("Nanometer (nm)") {
+                            initialUnit = "nm"
+                        }
+                        Button("Micrometers (µm)") {
+                            initialUnit = "µm"
+                        }
+                        Button("Milimeters (mm)") {
                             initialUnit = "mm"
                         }
-                        Button("Centimetres (cm)") {
+                        Button("Centimeters (cm)") {
                             initialUnit = "cm"
                         }
-                        Button("Decimetres (dm)") {
+                        Button("Decimeters (dm)") {
                             initialUnit = "dm"
                         }
-                        Button("Metres (m)") {
+                        Button("Meters (m)") {
                             initialUnit = "m"
                         }
-                        Button("Kilometres (km)") {
+                        Button("Kilometers (km)") {
                             initialUnit = "km"
                         }
                         Button("Inch (in)") {
@@ -164,6 +189,24 @@ struct LengthView: View {
                         Button("Miles (mi)") {
                             initialUnit = "mi"
                         }
+                        Button("Nautical mile (nmi)") {
+                            initialUnit = "nmi"
+                        }
+                        Button("fathom (fm)") {
+                            initialUnit = "fm"
+                        }
+                        Button("Astronomical Unit (AU)") {
+                            initialUnit = "AU"
+                        }
+                        Button("Light years (ly)") {
+                            initialUnit = "ly"
+                        }
+                        Button("Parsec (pc)") {
+                            initialUnit = "pc"
+                        }
+                        Button("Lunar distance (ld)") {
+                            initialUnit = "ld"
+                        }
                     } label: {
                         Text("Unit (1)")
                     }
@@ -177,19 +220,28 @@ struct LengthView: View {
                     }
                     
                     Menu {
-                        Button("Milimetres (mm)") {
+                        Button("Picometer (pm)") {
+                            wantedUnit = "pm"
+                        }
+                        Button("Nanometer (nm)") {
+                            wantedUnit = "µm"
+                        }
+                        Button("Micrometers (µm)") {
+                            wantedUnit = "um"
+                        }
+                        Button("Milimeters (mm)") {
                             wantedUnit = "mm"
                         }
-                        Button("Centimetres (cm)") {
+                        Button("Centimeters (cm)") {
                             wantedUnit = "cm"
                         }
-                        Button("Decimetres (dm)") {
+                        Button("Decimeters (dm)") {
                             wantedUnit = "dm"
                         }
-                        Button("Metres (m)") {
+                        Button("Meters (m)") {
                             wantedUnit = "m"
                         }
-                        Button("Kilometres (km)") {
+                        Button("Kilometers (km)") {
                             wantedUnit = "km"
                         }
                         Button("Inch (in)") {
@@ -203,6 +255,24 @@ struct LengthView: View {
                         }
                         Button("Miles (mi)") {
                             wantedUnit = "mi"
+                        }
+                        Button("Nautical mile (nmi)") {
+                            wantedUnit = "nmi"
+                        }
+                        Button("fathom (fm)") {
+                            wantedUnit = "fm"
+                        }
+                        Button("Astronomical Unit (AU)") {
+                            wantedUnit = "AU"
+                        }
+                        Button("Light years (ly)") {
+                            wantedUnit = "ly"
+                        }
+                        Button("Parsec (pc)") {
+                            wantedUnit = "pc"
+                        }
+                        Button("Lunar distance (ld)") {
+                            wantedUnit = "ld"
                         }
                     } label: {
                         Text("Unit (2)")

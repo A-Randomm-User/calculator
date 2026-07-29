@@ -7,6 +7,29 @@
 
 import SwiftUI
 
+enum SequenceType {
+    case linear
+    case quadratic
+    case cubic
+    case unknown
+    case none
+    
+    var description: String {
+        switch self {
+        case .linear:
+            return String(localized: "linear")
+        case .quadratic:
+            return String(localized: "quadratic")
+        case .cubic:
+            return String(localized: "cubic")
+        case .unknown:
+            return String(localized: "unknown")
+        case .none:
+            return ""
+        }
+    }
+}
+
 struct SequenceView: View {
     
     @State var n1: Double? = nil
@@ -15,8 +38,8 @@ struct SequenceView: View {
     @State var n4: Double? = nil
     @State var n5: Double? = nil
     
-    @State var sequenceType = ""
     @State var nthTerm = ""
+    @State var sequenceType: SequenceType = .none
     
     @State var animateSymbol1 = false
     @State var animateSymbol2 = false
@@ -45,13 +68,13 @@ struct SequenceView: View {
             let seq32 = seq23 - seq22
             
             if seq11 == seq12 && seq12 == seq13 && seq13 == seq14 {
-                sequenceType = "linear"
+                sequenceType = .linear
             } else if seq21 == seq22 && seq22 == seq23 {
-                sequenceType = "quadratic"
+                sequenceType = .quadratic
             } else if seq31 == seq32 {
-                sequenceType = "cubic"
+                sequenceType = .cubic
             } else {
-                sequenceType = "unknown"
+                sequenceType = .unknown
             }
         }
     }
@@ -99,7 +122,7 @@ struct SequenceView: View {
     
     func findTerm() {
         if let N1 = n1, let N2 = n2, let N3 = n3, let N4 = n4 {
-            if sequenceType == "linear" {
+            if sequenceType == .linear {
                 let a = N2 - N1
                 let n0 = N1 - a
                 
@@ -107,7 +130,7 @@ struct SequenceView: View {
                 
                 nthTerm = "\(a)n\(n0Str)"
                 
-            } else if sequenceType == "quadratic" {
+            } else if sequenceType == .quadratic {
                 let seq1 = N2 - N1
                 let seq2 = N3 - N2
                 let seqsec1 = seq2 - seq1
@@ -122,7 +145,7 @@ struct SequenceView: View {
                 
                 nthTerm = "\(aStr)²\(bStr)\(cStr)"
                 
-            } else if sequenceType == "cubic" {
+            } else if sequenceType == .cubic {
                 let seq1 = N2 - N1
                 let seq2 = N3 - N2
                 let seq3 = N4 - N3
@@ -156,11 +179,11 @@ struct SequenceView: View {
             VStack {
                 Text("Find nth term")
                     .font(.title)
-                    .fontWeight(.black)
+                    .fontWeight(.bold)
                 
-                Spacer()
+                Spacer(minLength: 20)
                 
-                Text("Enter for n₁")
+                Text("n₁")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                     .padding(.vertical, -10)
@@ -173,63 +196,33 @@ struct SequenceView: View {
                             .onSubmit {
                                 focusedField = .n2
                             }
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: n1) {
-                            sequenceType = ""
+                            sequenceType = .none
                             nthTerm = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = n1 {
-                                    n1 = -value
-                                }
-
-                                animateSymbol1.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbol1
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = n1 {
-                                    n1 = -value
-                                }
-
-                                animateSymbol1.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbol1
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = n1 {
+                            n1 = -value
                         }
+
+                        animateSymbol1.toggle()
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: animateSymbol1
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
-                Text("Enter for n₂")
+                Text("n₂")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                     .padding(.vertical, -10)
@@ -242,63 +235,33 @@ struct SequenceView: View {
                             .onSubmit {
                                 focusedField = .n3
                             }
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: n2) {
-                            sequenceType = ""
+                            sequenceType = .none
                             nthTerm = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = n2 {
-                                    n2 = -value
-                                }
-
-                                animateSymbol2.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbol2
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = n2 {
-                                    n2 = -value
-                                }
-
-                                animateSymbol2.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbol2
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = n2 {
+                            n2 = -value
                         }
+
+                        animateSymbol2.toggle()
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: animateSymbol2
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
-                Text("Enter for n₃")
+                Text("n₃")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                     .padding(.vertical, -10)
@@ -311,63 +274,33 @@ struct SequenceView: View {
                             .onSubmit {
                                 focusedField = .n4
                             }
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: n3) {
-                            sequenceType = ""
+                            sequenceType = .none
                             nthTerm = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = n3 {
-                                    n3 = -value
-                                }
-
-                                animateSymbol3.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbol3
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = n3 {
-                                    n3 = -value
-                                }
-
-                                animateSymbol3.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbol3
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = n3 {
+                            n3 = -value
                         }
+
+                        animateSymbol3.toggle()
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: animateSymbol3
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
-                Text("Enter for n₄")
+                Text("n₄")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                     .padding(.vertical, -10)
@@ -380,63 +313,33 @@ struct SequenceView: View {
                             .onSubmit {
                                 focusedField = .n5
                             }
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: n4) {
-                            sequenceType = ""
+                            sequenceType = .none
                             nthTerm = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = n4 {
-                                    n4 = -value
-                                }
-
-                                animateSymbol4.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbol4
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = n4 {
-                                    n4 = -value
-                                }
-
-                                animateSymbol4.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbol4
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = n4 {
+                            n4 = -value
                         }
+
+                        animateSymbol4.toggle()
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: animateSymbol4
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
-                Text("Enter for n₅")
+                Text("n₅")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                     .padding(.vertical, -10)
@@ -449,98 +352,83 @@ struct SequenceView: View {
                             .onSubmit {
                                 focusedField = nil
                             }
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: n5) {
-                            sequenceType = ""
+                            sequenceType = .none
                             nthTerm = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = n5 {
-                                    n5 = -value
-                                }
-
-                                animateSymbol5.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbol5
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = n5 {
-                                    n5 = -value
-                                }
-
-                                animateSymbol5.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbol5
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = n5 {
+                            n5 = -value
                         }
+
+                        animateSymbol5.toggle()
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: animateSymbol5
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
+                
+                Spacer(minLength: 15)
+                
                 Group {
                     if #available(iOS 26.0, *) {
-                        Button("Identify Sequence") {
-                            identifySequence()
-                        }
-                        .buttonStyle(.glass)
-                        Button("Find nth Term") {
+                        Button {
                             identifySequence()
                             findTerm()
+                        } label: {
+                            Text("Find nth Term")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 5)
                         }
-                        .buttonStyle(.glass)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .buttonStyle(.glassProminent)
                     } else {
-                        Button("Identify Sequence") {
-                            identifySequence()
-                        }
-                        .buttonStyle(.bordered)
-                        Button("Find nth Term") {
+                        Button {
                             identifySequence()
                             findTerm()
+                        } label: {
+                            Text("Find nth Term")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 5)
                         }
-                        .buttonStyle(.bordered)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .buttonStyle(.borderedProminent)
                     }
                 }
+                
+                Spacer(minLength: 15)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .opacity(0.10)
                         .padding(.horizontal)
                     VStack(alignment: .leading) {
-                        Text("Sequence Type: \(sequenceType)")
-                        Text("nth Term: \(nthTerm)")
+                        Text("Sequence Type")
+                        Text("\(sequenceType.description)")
+                        
+                        Spacer(minLength: 10)
+                        Text("nth Term")
+                        Text("\(nthTerm)")
+                        
+                        Spacer(minLength: 10)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 30)
+                    .padding(.vertical, 10)
                 }
                 .padding(.horizontal, 1)
-                .frame(minHeight: 140)
             }
         }
     }

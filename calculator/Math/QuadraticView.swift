@@ -8,13 +8,37 @@
 import SwiftUI
 import Foundation
 
+enum Discriminant {
+    case noRoots
+    case equalRoots
+    case distinctRoots
+    case notQuadratic
+    case none
+    
+    var description: String {
+        switch self {
+        case .noRoots:
+            return String(localized: "No Roots")
+        case .equalRoots:
+            return String(localized: "2 Equal Roots")
+        case .distinctRoots:
+            return String(localized: "2 Distinct Roots")
+        case .notQuadratic:
+            return String(localized: "Not a quadratic")
+        case .none:
+            return ""
+        }
+    }
+}
+
 struct QuadraticView: View {
     
     @State var a: Double? = nil
     @State var b: Double? = nil
     @State var c: Double? = nil
     
-    @State var discriminant = ""
+    @State private var discriminant: Discriminant = .none
+    
     @State var displayDiscriminant = ""
     @State var solutionText = ""
     @State var turningPoint = ""
@@ -29,18 +53,14 @@ struct QuadraticView: View {
             if a != 0 {
                 let value = b * b - 4 * a * c
                 if value == 0 {
-                    discriminant = "1"
-                    displayDiscriminant = "2 Equal Roots"
+                    discriminant = .equalRoots
                 } else if value < 0 {
-                    discriminant = "0"
-                    displayDiscriminant = "No Roots"
+                    discriminant = .noRoots
                 } else if value > 0 {
-                    discriminant = "2"
-                    displayDiscriminant = "2 Distinct Roots"
+                    discriminant = .distinctRoots
                 }
             } else {
-                discriminant = "Not a quadratic"
-                displayDiscriminant = "Not a quadratic"
+                discriminant = .notQuadratic
             }
         }
     }
@@ -50,14 +70,16 @@ struct QuadraticView: View {
             let a = a ?? 1
             if a != 0 {
                 let value = b * b - 4 * a * c
-                if discriminant == "0" {
+                
+                switch discriminant {
+                case .noRoots:
                     solutionText = "No Solution"
-                } else if discriminant == "1" {
+                case .equalRoots:
                     let fractionUp = -b + sqrt(value)
                     let solution = fractionUp / (2 * a)
                     let roundedSolution = (solution * 100).rounded() / 100
                     solutionText = "x = \(roundedSolution)"
-                } else if discriminant == "2" {
+                case .distinctRoots:
                     let fractionUpPos = -b + sqrt(value)
                     let fractionUpNeg = -b - sqrt(value)
                     let solution1 = fractionUpPos / (2 * a)
@@ -65,9 +87,11 @@ struct QuadraticView: View {
                     let roundedSolution1 = (solution1 * 100).rounded() / 100
                     let roundedSolution2 = (solution2 * 100).rounded() / 100
                     solutionText = "x = \(roundedSolution1) or x = \(roundedSolution2)"
+                case .notQuadratic:
+                    solutionText = "Not a quadratic"
+                case .none:
+                    solutionText = "Not a quadratic"
                 }
-            } else {
-                solutionText = "Not a quadratic"
             }
         }
     }
@@ -92,246 +116,174 @@ struct QuadraticView: View {
             VStack {
                 Text("Quadratic")
                     .font(.title)
-                    .fontWeight(.black)
+                    .fontWeight(.bold)
                 
-                Text("a: ")
+                Spacer(minLength: 25)
+                
+                Text("Coefficient a")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
+                    .padding(.vertical, -10)
                 HStack(spacing: 1) {
-                    TextField("Default is 1", value: $a, format: .number)
+                    TextField("1", value: $a, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: a) {
-                            discriminant = ""
+                            discriminant = .none
                             displayDiscriminant = ""
                             solutionText = ""
                             turningPoint = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = a {
-                                    a = -value
-                                }
-
-                                animateSymbolA.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbolA
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = a {
-                                    a = -value
-                                }
-
-                                animateSymbolA.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbolA
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = a {
+                            a = -value
                         }
+
+                        animateSymbolA.toggle()
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: animateSymbolA
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
-                Text("b: ")
+                Text("Coefficient b")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
+                    .padding(.vertical, -10)
                 HStack(spacing: 1) {
-                    TextField("Enter for b", value: $b, format: .number)
+                    TextField("b", value: $b, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: b) {
-                            discriminant = ""
+                            discriminant = .none
                             displayDiscriminant = ""
                             solutionText = ""
                             turningPoint = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = b {
-                                    b = -value
-                                }
-
-                                animateSymbolB.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbolB
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = b {
-                                    b = -value
-                                }
-
-                                animateSymbolB.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbolB
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = b {
+                            b = -value
                         }
+
+                        animateSymbolB.toggle()
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: animateSymbolB
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
                 
-                Text("c: ")
+                
+                Text("Coefficient c")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
+                    .padding(.vertical, -10)
                 HStack(spacing: 1) {
-                    TextField("Enter for c", value: $c, format: .number)
+                    TextField("c", value: $c, format: .number)
                         .keyboardType(.decimalPad)
-                        .padding(.horizontal, 30)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                RoundedRectangle(cornerRadius: 30)
-                                    .opacity(0)
-                                    .glassEffect()
-                                    .padding(.horizontal)
-                            } else {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(.gray.opacity(0.15))
-                                    .padding(.horizontal)
-                            }
-                        }
+                        .modifier(CalculatorTextFieldStyle())
                         .onChange(of: c) {
-                            discriminant = ""
+                            discriminant = .none
                             displayDiscriminant = ""
                             solutionText = ""
                             turningPoint = ""
                         }
                     
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Button {
-                                if let value = c {
-                                    c = -value
-                                }
-
-                                animateSymbolC.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbolC
-                                    )
-                            }
-                            .padding()
-                            .buttonStyle(.glass)
-                        } else {
-                            Button {
-                                if let value = c {
-                                    c = -value
-                                }
-
-                                animateSymbolC.toggle()
-                            } label: {
-                                Image(systemName: "plus.forwardslash.minus")
-                                    .symbolEffect(
-                                        .bounce.down.wholeSymbol,
-                                        options: .nonRepeating,
-                                        value: animateSymbolC
-                                    )
-                            }
-                            .padding()
+                    Button {
+                        if let value = c {
+                            c = -value
                         }
+
+                        animateSymbolC.toggle()
+                    } label: {
+                        Image(systemName: "plus.forwardslash.minus")
+                            .symbolEffect(
+                                .bounce.down.wholeSymbol,
+                                options: .nonRepeating,
+                                value: animateSymbolC
+                            )
                     }
+                    .padding()
+                    .tint(.primary)
+                    
+                    Spacer()
                 }
+                
+                Spacer(minLength: 30)
                 
                 Group {
                     if #available(iOS 26.0, *) {
-                        Button("Find Discriminant") {
-                            findDiscriminant()
-                        }
-                        .buttonStyle(.glass)
-                        Button("Find Solution") {
+                        Button {
                             findDiscriminant()
                             findSolution()
-                        }
-                        .buttonStyle(.glass)
-                        Button("Find Turning Point") {
                             findTurningPoint()
+                        } label: {
+                            Text("Solve")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 5)
                         }
-                        .buttonStyle(.glass)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .buttonStyle(.glassProminent)
                     } else {
-                        Button("Find Discriminant") {
-                            findDiscriminant()
-                        }
-                        .buttonStyle(.bordered)
-                        Button("Find Solution") {
+                        Button {
                             findDiscriminant()
                             findSolution()
-                        }
-                        .buttonStyle(.bordered)
-                        Button("Find Turning Point") {
                             findTurningPoint()
+                        } label: {
+                            Text("Solve")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 5)
                         }
-                        .buttonStyle(.bordered)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
+                        .buttonStyle(.borderedProminent)
                     }
                 }
+                
+                Spacer(minLength: 30)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .opacity(0.10)
                         .padding(.horizontal)
+                    
                     VStack(alignment: .leading) {
-                        Text("Discriminant: \(displayDiscriminant)")
-                        Text("Roots: \(solutionText)")
-                        Text("Turning Point: \(turningPoint)")
+                        Text("Discriminant")
+                        Text("\(discriminant.description)")
+                                                
+                        Spacer(minLength: 20)
+                        Text("Roots")
+                        Text("\(solutionText)")
+                        
+                        Spacer(minLength: 20)
+                        Text("Turning Point")
+                        Text("\(turningPoint)")
+                                                
+                        Spacer(minLength: 20)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 35)
+                    .padding(.vertical, 13)
                 }
                 .padding(.horizontal, 1)
-                .frame(minHeight: 140)
             }
         }
     }
