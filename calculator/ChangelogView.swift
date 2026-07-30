@@ -11,6 +11,25 @@ struct ChangelogView: View {
     var body: some View {
         ScrollView {
             VStack {
+                Text("Version 1.0, Build 14")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                Text("Released in: 2026.07.30")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Text("""
+                     This update added:
+                     1. Animations on Quadratic
+                     2. Sidebar on iPad and Mac
+                     """)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Spacer(minLength: 50)
+                
                 Text("Version 1.0, Build 13")
                     .font(.title3)
                     .fontWeight(.bold)

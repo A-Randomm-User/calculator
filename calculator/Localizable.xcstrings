@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
     "%@" : {
       "localizations" : {
         "zh-Hans" : {
@@ -52,6 +55,12 @@
             "state" : "translated",
             "value" : "两个不同的实数根"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "兩相異實根"
+          }
         }
       }
     },
@@ -61,6 +70,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "两个相等的实数根"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "兩相同實根"
           }
         }
       }
@@ -138,6 +153,12 @@
     "Answer" : {
       "localizations" : {
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "答案"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "答案"
@@ -222,6 +243,12 @@
             "state" : "translated",
             "value" : "二进制"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "二進位"
+          }
         }
       }
     },
@@ -231,6 +258,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "进制2"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "二進位"
           }
         }
       }
@@ -306,6 +339,26 @@
         }
       }
     },
+    "Cancel" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "Cannot take the square root of a negative number" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "负数无法被根号"
+          }
+        }
+      }
+    },
     "Centimeters (cm)" : {
       "localizations" : {
         "en-GB" : {
@@ -324,6 +377,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "公分（cm）"
+          }
+        }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除"
+          }
+        }
+      }
+    },
+    "Clear all values?" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除所有内容"
           }
         }
       }
@@ -357,6 +430,12 @@
             "state" : "translated",
             "value" : "系数A"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "係數A"
+          }
         }
       }
     },
@@ -367,6 +446,12 @@
             "state" : "translated",
             "value" : "系数B"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "係數B"
+          }
         }
       }
     },
@@ -376,6 +461,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "系数C"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "係數C"
           }
         }
       }
@@ -448,6 +539,12 @@
             "state" : "translated",
             "value" : "转换进制"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轉換數字"
+          }
         }
       }
     },
@@ -457,6 +554,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "转换进制"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轉換進位"
           }
         }
       }
@@ -506,6 +609,12 @@
             "state" : "translated",
             "value" : "立方"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "三次方"
+          }
         }
       }
     },
@@ -554,6 +663,12 @@
             "state" : "translated",
             "value" : "十进制"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "十進位"
+          }
         }
       }
     },
@@ -564,6 +679,12 @@
             "state" : "translated",
             "value" : "进制10"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "十進位"
+          }
         }
       }
     },
@@ -573,6 +694,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "判别式"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "判別式"
           }
         }
       }
@@ -664,6 +791,12 @@
             "state" : "translated",
             "value" : "输入c₁"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鍵入c₁"
+          }
         }
       }
     },
@@ -674,6 +807,12 @@
             "state" : "translated",
             "value" : "输入c₂"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鍵入c₂"
+          }
         }
       }
     },
@@ -683,6 +822,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "键入"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鍵入"
           }
         }
       }
@@ -700,6 +845,12 @@
             "state" : "translated",
             "value" : "英寻（fm）"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英尋（fm）"
+          }
         }
       }
     },
@@ -709,6 +860,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "最终金额"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最終金額"
           }
         }
       }
@@ -720,6 +877,12 @@
             "state" : "translated",
             "value" : "求通项公式"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "找n項"
+          }
         }
       }
     },
@@ -729,6 +892,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "求通项公式"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "找n項"
           }
         }
       }
@@ -740,12 +909,24 @@
             "state" : "translated",
             "value" : "求通项公式"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "求數列的第n項"
+          }
         }
       }
     },
     "Find unknown" : {
       "localizations" : {
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "找未知"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "找未知"
@@ -759,6 +940,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "求单利/复利的未知数"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在單利/複利上找未知"
           }
         }
       }
@@ -792,6 +979,12 @@
             "state" : "translated",
             "value" : "十六进制"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "十六進位"
+          }
         }
       }
     },
@@ -801,6 +994,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "进制16"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "十六進位"
           }
         }
       }
@@ -846,6 +1045,12 @@
     "Interest Rate (%)" : {
       "localizations" : {
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "利率（%）"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "利率（%）"
@@ -919,6 +1124,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "线性"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "線型"
           }
         }
       }
@@ -1063,12 +1274,24 @@
             "state" : "translated",
             "value" : "n₁"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n₁"
+          }
         }
       }
     },
     "n₂" : {
       "localizations" : {
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n₂"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n₂"
@@ -1083,6 +1306,12 @@
             "state" : "translated",
             "value" : "n₃"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n₃"
+          }
         }
       }
     },
@@ -1093,12 +1322,24 @@
             "state" : "translated",
             "value" : "n₄"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n₄"
+          }
         }
       }
     },
     "n₅" : {
       "localizations" : {
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n₅"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n₅"
@@ -1150,12 +1391,22 @@
         }
       }
     },
-    "No Roots" : {
+    "No Real Roots" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "无实数根"
+            "value" : "无实根"
+          }
+        }
+      }
+    },
+    "No Solution" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无解"
           }
         }
       }
@@ -1205,6 +1456,12 @@
             "state" : "translated",
             "value" : "第n项"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "第n項"
+          }
         }
       }
     },
@@ -1214,6 +1471,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "年数"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "年數"
           }
         }
       }
@@ -1225,6 +1488,12 @@
             "state" : "translated",
             "value" : "八进制"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八進位"
+          }
         }
       }
     },
@@ -1234,6 +1503,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "进制8"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "八進位"
           }
         }
       }
@@ -1260,6 +1535,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "输出"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輸出"
           }
         }
       }
@@ -1329,7 +1610,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "二元一次方程"
+            "value" : "二次函数"
           }
         },
         "zh-Hant" : {
@@ -1367,7 +1648,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "發布時間：民國115年7月23日"
+            "value" : "發布時間：26年7月23日"
           }
         },
         "zh-HK" : {
@@ -1389,7 +1670,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "發布時間：民國115年7月24日"
+            "value" : "發布時間：26年7月24日"
           }
         },
         "zh-HK" : {
@@ -1411,7 +1692,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "發布時間：民國115年7月26日"
+            "value" : "發布時間：26年7月26日"
           }
         },
         "zh-HK" : {
@@ -1433,7 +1714,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "發布時間：民國115年7月27日"
+            "value" : "發布時間：26年7月27日"
           }
         },
         "zh-HK" : {
@@ -1455,7 +1736,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "發布時間：民國115年7月29日"
+            "value" : "發布時間：26年7月29日"
           }
         },
         "zh-HK" : {
@@ -1473,12 +1754,24 @@
             "state" : "translated",
             "value" : "发布时间：26年7月30日"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "發布時間：26年7月30日"
+          }
         }
       }
     },
     "Roots" : {
       "localizations" : {
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "根"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "根"
@@ -1492,6 +1785,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "选择"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇"
+          }
+        }
+      }
+    },
+    "Select a calculator" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择侧栏任意选项"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "側欄選擇一個選項"
           }
         }
       }
@@ -1519,6 +1834,12 @@
             "state" : "translated",
             "value" : "选择进制"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇系統"
+          }
         }
       }
     },
@@ -1528,6 +1849,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "数列类型"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數列格式"
           }
         }
       }
@@ -1555,12 +1882,24 @@
             "state" : "translated",
             "value" : "单利模式下解开最终金额的答案不包含原金额"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "單利的最終答案不包含本金"
+          }
         }
       }
     },
     "Solution" : {
       "localizations" : {
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "答案"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "答案"
@@ -1591,6 +1930,12 @@
             "state" : "translated",
             "value" : "解二元一次方程组"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解二元一次聯立方程式"
+          }
         }
       }
     },
@@ -1600,6 +1945,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "解二元一次方程组"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解二元一次聯立方程式"
           }
         }
       }
@@ -1627,12 +1978,34 @@
         }
       }
     },
+    "This update added:\n1. Animations on Quadratic\n2. Sidebar on iPad and Mac" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n1. 二次函数动画\n2. 侧栏"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n二次方程動畫\n側欄"
+          }
+        }
+      }
+    },
     "This update added:\n1. Binary to Denary and inversely conversion\n2. Adaptation to iOS 26 Liquid Glass" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "本次更新新增：\n1. 二进制与十进制及反向转换\n2. 适配 iOS 26 Liquid Glass 界面"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n二進位與十進位之間的雙向換算\n適應 iOS 26 Liquid Glass 設計風格"
           }
         }
       }
@@ -1644,6 +2017,12 @@
             "state" : "translated",
             "value" : "本次更新新增：\n1. 二进制与十进制及反向转换\n2. 适配 iOS 26 Liquid Glass\n\n已知问题：\n1. 转换功能无法转换负数\n2. 转换过程中可以输入小数点，但会返回错误值"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n二進位與十進位之間的雙向換算適應\niOS 26 Liquid Glass 設計風格\n\n已知問題：\n換算功能目前不支援負數轉換\n在換算模式中可以輸入小數點，但會返回錯誤的數值"
+          }
         }
       }
     },
@@ -1653,6 +2032,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "本次更新新增：\n1. 进制转换\n2. 更佳的 Liquid Glass 使用体验\n3. 更精准的翻译"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n進位制換算\n優化 Liquid Glass 的操作體驗\n完善其他語言"
           }
         }
       }
@@ -1664,6 +2049,12 @@
             "state" : "translated",
             "value" : "本次更新新增：\n1. 求解二元一次方程组\n2. 长度转换\n3. 其他模式下数值向上取整\n4. 主菜单中模式区分\n5. 改进了按顺序输入数值的功能，键盘用户现在可以返回到下一个文本框"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n解二元一次聯立方程式\n長度單位換算\n在其他模式進位數值以縮短\n在主選單中區分不同模式\n優化數列模式的數值輸入體驗"
+          }
         }
       }
     },
@@ -1674,6 +2065,12 @@
             "state" : "translated",
             "value" : "本次更新新增：\n1. 计算单利或复利未知数\n2. 新图标"
           }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n求單利或複利中的未知數\n全新圖示"
+          }
         }
       }
     },
@@ -1683,6 +2080,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "本次更新新增：\n1. 更多长度单位转换\n2. 更多翻译"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n支援更多長度換算單位\n完善語言"
           }
         }
       }
@@ -1715,6 +2118,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "转折点"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轉折點"
           }
         }
       }
@@ -1807,6 +2216,60 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未知"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知"
+          }
+        }
+      }
+    },
+    "Value < 0" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数值<0"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "值 > 0"
+          }
+        }
+      }
+    },
+    "Value = 0" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数值=0"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "值 = 0"
+          }
+        }
+      }
+    },
+    "Value > 0" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数值>0"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "值 < 0"
           }
         }
       }
@@ -1987,6 +2450,68 @@
         }
       }
     },
+    "Version 1.0, Build 14" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本1.0，内部版本14"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本1.0，版號14"
+          }
+        }
+      }
+    },
+    "Waiting..." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等待中…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等待中…"
+          }
+        }
+      }
+    },
+    "Working out the Discriminant" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在解判别式"
+          }
+        }
+      }
+    },
+    "Working out the Solution" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在解x"
+          }
+        }
+      }
+    },
+    "Working out the Turning Point" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在解转折点"
+          }
+        }
+      }
+    },
     "Yard (yd)" : {
       "localizations" : {
         "en-GB" : {
@@ -2039,6 +2564,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "年"
+          }
+        }
+      }
+    },
+    "Your current inputs and results will be cleared." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你当前输入的所有内容将被清除"
           }
         }
       }

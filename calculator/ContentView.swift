@@ -16,137 +16,101 @@ struct CalculatorTextFieldStyle: ViewModifier {
 struct ContentView: View {
     
     @State private var selectedView: String?
+    
     @State var version = "1.0"
-    @State var build = "13"
+    @State var build = "14"
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Math")
-                        .font(.title3)
-
-                    NavigationLink {
-                        InterestView()
-                    } label: {
+        NavigationSplitView {
+            List(selection: $selectedView) {
+                
+                Section("Math") {
+                    NavigationLink(value: "interest") {
                         Text("Find unknown on Simple / Compound Interest")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .multilineTextAlignment(.leading)
-                            .padding()
-                    }
-                    .background {
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(.gray.opacity(0.15))
                     }
                     
-                    NavigationLink {
-                        QuadraticView()
-                    } label: {
+                    NavigationLink(value: "quadratic") {
                         Text("Solve Quadratic Equation")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .multilineTextAlignment(.leading)
-                            .padding()
-                    }
-                    .background {
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(.gray.opacity(0.15))
                     }
                     
-                    NavigationLink {
-                        SequenceView()
-                    } label: {
+                    NavigationLink(value: "sequence") {
                         Text("Find nth term in Sequence")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .multilineTextAlignment(.leading)
-                            .padding()
-                    }
-                    .background {
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(.gray.opacity(0.15))
                     }
                     
-                    NavigationLink {
-                        SimultaneousView()
-                    } label: {
+                    NavigationLink(value: "simultaneous") {
                         Text("Solve 2 unknowns of Linear Simultaneous Equation")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .multilineTextAlignment(.leading)
-                            .padding()
                     }
-                    .background {
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(.gray.opacity(0.15))
-                    }
-                    
-                    Text("Conversion")
-                        .font(.title3)
-
-                    NavigationLink {
-                        RadixView()
-                    } label: {
+                }
+                
+                Section("Conversion") {
+                    NavigationLink(value: "radix") {
                         Text("Convert Number System")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .multilineTextAlignment(.leading)
-                            .padding()
-                    }
-                    .background {
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(.gray.opacity(0.15))
                     }
                     
-                    NavigationLink {
-                        LengthView()
-                    } label: {
+                    NavigationLink(value: "length") {
                         Text("Length Conversion")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .multilineTextAlignment(.leading)
-                            .padding()
                     }
-                    .background {
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(.gray.opacity(0.15))
+                }
+                
+                Section {
+                    NavigationLink(value: "about") {
+                        Text("About This Build")
                     }
-                    
-                    Divider()
-
-                    NavigationLink("About This Build") {
-                        ChangelogView()
-                    }
-
-                    Spacer(minLength: 20)
-
+                }
+                
+                Section {
                     VStack {
                         Text("Version \(version), Build \(build)")
                         Text("Created by Aaron")
                     }
-                    .frame(maxWidth: .infinity)
                     .foregroundStyle(.secondary)
-                    .padding(.top)
+                    .frame(maxWidth: .infinity)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
             }
             .navigationTitle("Calculator")
             
-            .onReceive(
-                NotificationCenter.default.publisher(
-                    for: .openCalculator
-                )
-            ) { notification in
-                
-                selectedView = notification.object as? String
-            }
-            
-            .navigationDestination(item: $selectedView) { value in
-                switch value {
+        } detail: {
+            NavigationStack {
+                if let selectedView {
+                    switch selectedView {
+                        
+                    case "interest":
+                        InterestView()
+                        
+                    case "quadratic":
+                        QuadraticView()
+                        
+                    case "sequence":
+                        SequenceView()
+                        
+                    case "simultaneous":
+                        SimultaneousView()
+                        
+                    case "radix":
+                        RadixView()
+                        
+                    case "length":
+                        LengthView()
+                        
+                    case "about":
+                        ChangelogView()
+                        
+                    default:
+                        Text("Select a calculator")
+                    }
                     
-                case "quadratic":
-                    QuadraticView()
-                    
-                default:
-                    EmptyView()
+                } else {
+                    Text("Select a calculator")
+                        .foregroundStyle(.secondary)
                 }
             }
+        }
+        .onReceive(
+            NotificationCenter.default.publisher(
+                for: .openCalculator
+            )
+        ) { notification in
+            selectedView = notification.object as? String
         }
     }
 }
