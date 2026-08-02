@@ -1,5 +1,5 @@
 //
-//  LengthView.swift
+//  AreaView.swift
 //  calculator
 //
 //  Created by Aaron on 26/07/2026.
@@ -7,32 +7,24 @@
 
 import SwiftUI
 
-struct LengthView: View {
+struct AreaView: View {
     
     let units = [
-        "pm": 0.000000000001,
-        "nm": 0.000000001,
-        "µm": 0.000001,
-        "mm": 0.001,
-        "cm": 0.01,
-        "dm": 0.1,
-        "m": 1,
-        "km": 1000,
-        "in": 0.0254,
-        "ft": 0.3048,
-        "yd": 0.9144,
-        "mi": 1609.344,
-        "nmi": 1852,
-        "fm": 1.828800164445711,
-        "fur": 201.168,
-        "AU": 149597870700,
-        "ly": 9460730472580800,
-        "pc": 30856775814913672.78913938,
-        "ld": 384402000,
+        "mm²": 0.000001,
+        "cm²": 0.001,
+        "dm²": 0.01,
+        "m²": 1,
+        "km²": 100000,
+        "ha": 10000,
+        "in²": 0.00064516,
+        "ft²": 0.09290304,
+        "yd²": 0.83612736,
+        "mi²": 2589988.110336,
+        "ac": 4046.8564224,
     ]
     
-    @AppStorage("lengthInitialUnit") private var initialUnit: String = "cm"
-    @AppStorage("lengthWantedUnit") private var wantedUnit: String = "m"
+    @AppStorage("areaInitialUnit") private var initialUnit: String = "cm²"
+    @AppStorage("areaWantedUnit") private var wantedUnit: String = "m²"
     @State private var input: Double? = nil
     
     @State private var output: String = ""
@@ -156,59 +148,38 @@ struct LengthView: View {
             ToolbarItem(placement: .topBarLeading) {
                 HStack(spacing: 20) {
                     Menu {
-                        Button("Picometer (pm)") {
-                            initialUnit = "pm"
+                        Button("Sqr Milimeter (mm²)") {
+                            initialUnit = "mm²"
                         }
-                        Button("Nanometer (nm)") {
-                            initialUnit = "nm"
+                        Button("Sqr Centimeter (cm²)") {
+                            initialUnit = "cm²"
                         }
-                        Button("Micrometers (µm)") {
-                            initialUnit = "µm"
+                        Button("Sqr Decimeter (dm²)") {
+                            initialUnit = "dm²"
                         }
-                        Button("Milimeters (mm)") {
-                            initialUnit = "mm"
+                        Button("Sqr Meter (m²)") {
+                            initialUnit = "m²"
                         }
-                        Button("Centimeters (cm)") {
-                            initialUnit = "cm"
+                        Button("Sqr Kilometer (km²)") {
+                            initialUnit = "km²"
                         }
-                        Button("Decimeters (dm)") {
-                            initialUnit = "dm"
+                        Button("Hectare (ha)") {
+                            initialUnit = "ha"
                         }
-                        Button("Meters (m)") {
-                            initialUnit = "m"
+                        Button("Sqr Inch (in²)") {
+                            initialUnit = "in²"
                         }
-                        Button("Kilometers (km)") {
-                            initialUnit = "km"
+                        Button("Sqr Feet (ft²)") {
+                            initialUnit = "ft²"
                         }
-                        Button("Inch (in)") {
-                            initialUnit = "in"
+                        Button("Sqr Yard (yd²)") {
+                            initialUnit = "yd²"
                         }
-                        Button("Foot (ft)") {
-                            initialUnit = "ft"
+                        Button("Sqr Mile (mi²)") {
+                            initialUnit = "mi²"
                         }
-                        Button("Yard (yd)") {
-                            initialUnit = "yd"
-                        }
-                        Button("Miles (mi)") {
-                            initialUnit = "mi"
-                        }
-                        Button("Nautical mile (nmi)") {
-                            initialUnit = "nmi"
-                        }
-                        Button("fathom (fm)") {
-                            initialUnit = "fm"
-                        }
-                        Button("Astronomical Unit (AU)") {
-                            initialUnit = "AU"
-                        }
-                        Button("Light years (ly)") {
-                            initialUnit = "ly"
-                        }
-                        Button("Parsec (pc)") {
-                            initialUnit = "pc"
-                        }
-                        Button("Lunar distance (ld)") {
-                            initialUnit = "ld"
+                        Button("Acres (ac)") {
+                            initialUnit = "ac"
                         }
                     } label: {
                         Text("Unit (1)")
@@ -223,59 +194,38 @@ struct LengthView: View {
                     }
                     
                     Menu {
-                        Button("Picometer (pm)") {
-                            wantedUnit = "pm"
+                        Button("Sqr Milimeter (mm²)") {
+                            wantedUnit = "mm²"
                         }
-                        Button("Nanometer (nm)") {
-                            wantedUnit = "nm"
+                        Button("Sqr Centimeter (cm²)") {
+                            wantedUnit = "cm²"
                         }
-                        Button("Micrometers (µm)") {
-                            wantedUnit = "µm"
+                        Button("Sqr Decimeter (dm²)") {
+                            wantedUnit = "dm²"
                         }
-                        Button("Milimeters (mm)") {
-                            wantedUnit = "mm"
+                        Button("Sqr Meter (m²)") {
+                            wantedUnit = "m²"
                         }
-                        Button("Centimeters (cm)") {
-                            wantedUnit = "cm"
+                        Button("Sqr Kilometer (km²)") {
+                            wantedUnit = "km²"
                         }
-                        Button("Decimeters (dm)") {
-                            wantedUnit = "dm"
+                        Button("Hectare (ha)") {
+                            wantedUnit = "ha"
                         }
-                        Button("Meters (m)") {
-                            wantedUnit = "m"
+                        Button("Sqr Inch (in²)") {
+                            wantedUnit = "in²"
                         }
-                        Button("Kilometers (km)") {
-                            wantedUnit = "km"
+                        Button("Sqr Feet (ft²)") {
+                            wantedUnit = "ft²"
                         }
-                        Button("Inch (in)") {
-                            wantedUnit = "in"
+                        Button("Sqr Yard (yd²)") {
+                            wantedUnit = "yd²"
                         }
-                        Button("Foot (ft)") {
-                            wantedUnit = "ft"
+                        Button("Sqr Mile (mi²)") {
+                            wantedUnit = "mi²"
                         }
-                        Button("Yard (yd)") {
-                            wantedUnit = "yd"
-                        }
-                        Button("Miles (mi)") {
-                            wantedUnit = "mi"
-                        }
-                        Button("Nautical mile (nmi)") {
-                            wantedUnit = "nmi"
-                        }
-                        Button("fathom (fm)") {
-                            wantedUnit = "fm"
-                        }
-                        Button("Astronomical Unit (AU)") {
-                            wantedUnit = "AU"
-                        }
-                        Button("Light years (ly)") {
-                            wantedUnit = "ly"
-                        }
-                        Button("Parsec (pc)") {
-                            wantedUnit = "pc"
-                        }
-                        Button("Lunar distance (ld)") {
-                            wantedUnit = "ld"
+                        Button("Acres (ac)") {
+                            wantedUnit = "ac"
                         }
                     } label: {
                         Text("Unit (2)")
@@ -283,11 +233,11 @@ struct LengthView: View {
                 }
             }
         }
-        .navigationTitle("Convert length")
+        .navigationTitle("Convert area")
         .navigationBarTitleDisplayMode(.large)
     }
 }
 
 #Preview {
-    LengthView()
+    AreaView()
 }

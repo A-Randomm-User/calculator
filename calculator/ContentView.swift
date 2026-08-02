@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var selectedView: String?
     
     @State var version = "1.0"
-    @State var build = "14"
+    @State var build = "15"
     
     var body: some View {
         NavigationSplitView {
@@ -49,6 +49,10 @@ struct ContentView: View {
                     
                     NavigationLink(value: "length") {
                         Text("Length Conversion")
+                    }
+                    
+                    NavigationLink(value: "area") {
+                        Text("Area Conversion")
                     }
                 }
                 
@@ -91,6 +95,9 @@ struct ContentView: View {
                         
                     case "length":
                         LengthView()
+                        
+                    case "area":
+                        AreaView()
                         
                     case "about":
                         ChangelogView()

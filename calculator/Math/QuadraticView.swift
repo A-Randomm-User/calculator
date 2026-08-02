@@ -74,6 +74,10 @@ struct QuadraticView: View {
     
     @State private var showClearConfirmation = false
     
+    @State private var imaginaryNumber: Double = 0
+    
+    @AppStorage("quadraticComplexMath") private var complexMath = false
+    
     func reset() {
         discriminant = .none
         withAnimation(.smooth) {
@@ -273,12 +277,26 @@ struct QuadraticView: View {
     }
     
     func quadStep1() {
-        if let b, let c, stepsValue >= 0 {
+        if let b, let c {
             let a = a ?? 1
             switch discriminant {
             case .noRoots:
-                withAnimation(.smooth) {
-                    quadStepsText = String(localized: "Cannot take the square root of a negative number")
+                if !complexMath {
+                    withAnimation(.smooth) {
+                        quadStepsText = String(localized: "Cannot take the square root of a negative number")
+                    }
+                } else {
+                    A = formatNumber(a)
+                    B = formatNumber(b)
+                    C = formatNumber(c)
+                    
+                    withAnimation(.smooth) {
+                        initA = A
+                        initB = B
+                        initC = C
+                        
+                        quadStepsText = "[-\(initB) ± √(\(stepsValue))] ÷ [2(\(initA))]"
+                    }
                 }
             case .equalRoots:
                 A = formatNumber(a)
@@ -325,12 +343,26 @@ struct QuadraticView: View {
     }
     
     func quadStep2() {
-        if let b, let c, stepsValue >= 0 {
+        if let b, let c {
             let a = a ?? 1
             switch discriminant {
             case .noRoots:
-                withAnimation(.smooth) {
-                    quadStepsText = String(localized: "Cannot take the square root of a negative number")
+                if !complexMath {
+                    withAnimation(.smooth) {
+                        quadStepsText = String(localized: "Cannot take the square root of a negative number")
+                    }
+                } else {
+                    A = formatNumber(a)
+                    B = formatNumber(b)
+                    C = formatNumber(c)
+                    
+                    withAnimation(.smooth) {
+                        initB = "\(-b)"
+                        imaginaryNumber = sqrt(-stepsValue)
+                        initA = "\(2 * a)"
+                        
+                        quadStepsText = "[\(initB) ± \(imaginaryNumber)i] ÷ [\(initA)]"
+                    }
                 }
             case .equalRoots:
                 A = formatNumber(a)
@@ -371,8 +403,21 @@ struct QuadraticView: View {
             let a = a ?? 1
             switch discriminant {
             case .noRoots:
-                withAnimation(.smooth) {
-                    quadStepsText = String(localized: "Cannot take the square root of a negative number")
+                if !complexMath {
+                    withAnimation(.smooth) {
+                        quadStepsText = String(localized: "Cannot take the square root of a negative number")
+                    }
+                } else {
+                    A = formatNumber(a)
+                    B = formatNumber(b)
+                    C = formatNumber(c)
+                    
+                    withAnimation(.smooth) {
+                        initB = "\(-b) + \(imaginaryNumber)i"
+                        initB2 = "\(-b) - \(imaginaryNumber)i"
+                        
+                        quadStepsText = "x = [\(initB)] ÷ [\(initA)] \nx = [\(initB2)] ÷ [\(initA)]"
+                    }
                 }
             case .equalRoots:
                 A = formatNumber(a)
@@ -566,8 +611,21 @@ struct QuadraticView: View {
                 
                 switch discriminant {
                 case .noRoots:
-                    withAnimation(.smooth) {
-                        solutionText = String(localized: "No Solution")
+                    if !complexMath {
+                        withAnimation(.smooth) {
+                            solutionText = String(localized: "No Solution")
+                        }
+                    } else {
+                        withAnimation(.smooth) {
+                            let real = -b / (2 * a)
+                            let imag = sqrt(-value) / (2 * a)
+
+                            solutionText =
+                            """
+                            x = \(formatNumber(real)) + \(formatNumber(imag))i
+                            x = \(formatNumber(real)) - \(formatNumber(imag))i
+                            """
+                        }
                     }
                 case .equalRoots:
                     let fractionUp = -b + sqrt(value)
@@ -729,6 +787,10 @@ struct QuadraticView: View {
                 Spacer(minLength: 30)
                 
                 HStack {
+                    
+                    Toggle("Complex Math", isOn: $complexMath)
+                        .padding()
+                    
                     Spacer()
                     
                     Group {

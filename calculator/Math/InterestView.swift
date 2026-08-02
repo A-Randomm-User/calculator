@@ -18,18 +18,18 @@ enum InterestTarget {
 
 struct InterestView: View {
     
-    @State var original: Double? = nil
-    @State var rate: Double? = nil
-    @State var year: Double? = nil
-    @State var final: Double? = nil
-    @State var mode = ""
-    @State var answer: Double? = nil
-    @State var displayAnswer = ""
+    @State private var original: Double? = nil
+    @State private var rate: Double? = nil
+    @State private var year: Double? = nil
+    @State private var final: Double? = nil
+    @State private var mode = ""
+    @State private var answer: Double? = nil
+    @State private var displayAnswer = ""
     
-    @State var originalAnimate = false
-    @State var rateAnimate = false
-    @State var yearAnimate = false
-    @State var finalAnimate = false
+    @State private var originalAnimate = false
+    @State private var rateAnimate = false
+    @State private var yearAnimate = false
+    @State private var finalAnimate = false
 
     @State private var target: InterestTarget = .none
     

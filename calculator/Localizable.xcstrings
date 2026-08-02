@@ -6,6 +6,12 @@
     },
     "%@" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -28,6 +34,12 @@
     },
     "1" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -50,10 +62,16 @@
     },
     "2 Distinct Roots" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Two Distinct Roots"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "两个不同的实数根"
+            "value" : "不等实数根"
           }
         },
         "zh-Hant" : {
@@ -66,10 +84,16 @@
     },
     "2 Equal Roots" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Two Equal Roots"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "两个相等的实数根"
+            "value" : "相等实数根"
           }
         },
         "zh-Hant" : {
@@ -82,6 +106,12 @@
     },
     "a₁ + b₁ = c₁\na₂ + b₂ = c₂" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a₁ + b₁ = c₁\na₂ + b₂ = c₂"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -98,6 +128,12 @@
     },
     "a₁:" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a₁:"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -105,6 +141,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a₁:"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "a₁:"
@@ -114,6 +156,12 @@
     },
     "a₂:" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a₂:"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -125,11 +173,23 @@
             "state" : "translated",
             "value" : "a₂:"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a₂:"
+          }
         }
       }
     },
     "About This Build" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About This Build"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -150,8 +210,30 @@
         }
       }
     },
+    "Acres (ac)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英亩（ac）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "英畝（ac）"
+          }
+        }
+      }
+    },
     "Answer" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Answer"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -162,6 +244,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "答案"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "答案"
+          }
+        }
+      }
+    },
+    "Area Conversion" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "面积转换"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "面積換算"
           }
         }
       }
@@ -181,6 +285,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "天文單位（AU）"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "天文單位（AU）"
@@ -281,6 +391,12 @@
             "state" : "translated",
             "value" : "c"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "c"
+          }
         }
       }
     },
@@ -293,6 +409,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "c₁"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "c₁"
@@ -313,12 +435,24 @@
             "state" : "translated",
             "value" : "c₂"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "c₂"
+          }
         }
       }
     },
     "Calculator" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Reckoner"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -341,7 +475,25 @@
     },
     "Cancel" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Never mind"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消操作"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "取消"
@@ -351,10 +503,22 @@
     },
     "Cannot take the square root of a negative number" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cannot take the square root of a negative number"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "负数无法被根号"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "負數無法被根號"
           }
         }
       }
@@ -383,7 +547,19 @@
     },
     "Clear" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove all"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除"
+          }
+        },
+        "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "清除"
@@ -393,10 +569,22 @@
     },
     "Clear all values?" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shall all values be cleared?"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "清除所有内容"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "是否清除所有值？"
           }
         }
       }
@@ -425,6 +613,12 @@
     },
     "Coefficient a" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coefficient a"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -441,6 +635,12 @@
     },
     "Coefficient b" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coefficient b"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -457,6 +657,12 @@
     },
     "Coefficient c" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coefficient c"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -467,6 +673,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "係數C"
+          }
+        }
+      }
+    },
+    "Complex Math" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "复杂数学"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複雜數學"
           }
         }
       }
@@ -532,6 +754,38 @@
         }
       }
     },
+    "Convert area" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "转换面积"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "換算面積"
+          }
+        }
+      }
+    },
+    "Convert length" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "转换长度"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "換算長度"
+          }
+        }
+      }
+    },
     "Convert Number" : {
       "localizations" : {
         "zh-Hans" : {
@@ -560,22 +814,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "轉換進位"
-          }
-        }
-      }
-    },
-    "Convert units in length" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "转换长度单位"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "換算長度單位"
           }
         }
       }
@@ -634,6 +872,50 @@
         }
       }
     },
+    "Decimal" : {
+      "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denary"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "十进制"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "十進位"
+          }
+        }
+      }
+    },
+    "Decimal:" : {
+      "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denary:"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "进制10"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "十進位"
+          }
+        }
+      }
+    },
     "Decimeters (dm)" : {
       "localizations" : {
         "en-GB" : {
@@ -656,44 +938,12 @@
         }
       }
     },
-    "Denary" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "十进制"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "十進位"
-          }
-        }
-      }
-    },
-    "Denary:" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "进制10"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "十進位"
-          }
-        }
-      }
-    },
     "Discriminant" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "判别式"
+            "value" : "判断式"
           }
         },
         "zh-Hant" : {
@@ -972,6 +1222,22 @@
         }
       }
     },
+    "Hectare (ha)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "公顷（ha）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "公頃（ha）"
+          }
+        }
+      }
+    },
     "Hexadecimal" : {
       "localizations" : {
         "zh-Hans" : {
@@ -1153,6 +1419,12 @@
             "state" : "translated",
             "value" : "月球距離（ld）"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "月球距離（ld）"
+          }
         }
       }
     },
@@ -1175,6 +1447,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "算術"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "數學"
           }
         }
       }
@@ -1280,6 +1558,12 @@
             "state" : "translated",
             "value" : "n₁"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n₁"
+          }
         }
       }
     },
@@ -1292,6 +1576,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n₂"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n₂"
@@ -1312,6 +1602,12 @@
             "state" : "translated",
             "value" : "n₃"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n₃"
+          }
         }
       }
     },
@@ -1328,6 +1624,12 @@
             "state" : "translated",
             "value" : "n₄"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n₄"
+          }
         }
       }
     },
@@ -1340,6 +1642,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n₅"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n₅"
@@ -1396,7 +1704,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "无实根"
+            "value" : "没有实数根"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無實數根"
           }
         }
       }
@@ -1407,6 +1721,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "无解"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無解"
           }
         }
       }
@@ -1420,6 +1740,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "無"
@@ -1445,6 +1771,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "不是一個二次方程式"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不是一個二次函數"
           }
         }
       }
@@ -1602,6 +1934,12 @@
             "state" : "translated",
             "value" : "二次方程式"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方"
+          }
         }
       }
     },
@@ -1618,6 +1956,12 @@
             "state" : "translated",
             "value" : "二次方程式"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "二次函數"
+          }
         }
       }
     },
@@ -1633,6 +1977,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "率"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "利率"
           }
         }
       }
@@ -1760,6 +2110,28 @@
             "state" : "translated",
             "value" : "發布時間：26年7月30日"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "發布時間：2026年7月30日"
+          }
+        }
+      }
+    },
+    "Released in: 2026.08.02" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "发布时间：26年8月2日"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "發布時間：26年8月2日"
+          }
         }
       }
     },
@@ -1776,21 +2148,11 @@
             "state" : "translated",
             "value" : "根"
           }
-        }
-      }
-    },
-    "Select" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "选择"
-          }
         },
-        "zh-Hant" : {
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "選擇"
+            "value" : "根"
           }
         }
       }
@@ -1807,6 +2169,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "側欄選擇一個選項"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇一個模式以繼續"
           }
         }
       }
@@ -1904,6 +2272,12 @@
             "state" : "translated",
             "value" : "答案"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "答案"
+          }
         }
       }
     },
@@ -1919,6 +2293,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "解題"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解"
           }
         }
       }
@@ -1978,6 +2358,150 @@
         }
       }
     },
+    "Sqr Centimeter (cm²)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方厘米（cm²）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方公分（cm²）"
+          }
+        }
+      }
+    },
+    "Sqr Decimeter (dm²)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方分米（dm²）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方公寸（dm²）"
+          }
+        }
+      }
+    },
+    "Sqr Feet (ft²)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方英尺（ft²）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方呎（ft²）"
+          }
+        }
+      }
+    },
+    "Sqr Inch (in²)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方英寸（in²）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方吋（in²）"
+          }
+        }
+      }
+    },
+    "Sqr Kilometer (km²)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方公里（km²）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方公里（km²）"
+          }
+        }
+      }
+    },
+    "Sqr Meter (m²)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方米（m²）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方公尺（m²）"
+          }
+        }
+      }
+    },
+    "Sqr Mile (mi²)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方英里（mi²）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方英里（mi²）"
+          }
+        }
+      }
+    },
+    "Sqr Milimeter (mm²)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方毫米（mm²）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方公釐（mm²）"
+          }
+        }
+      }
+    },
+    "Sqr Yard (yd²)" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方码（yd²）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平方碼（yd²）"
+          }
+        }
+      }
+    },
     "This update added:\n1. Animations on Quadratic\n2. Sidebar on iPad and Mac" : {
       "localizations" : {
         "zh-Hans" : {
@@ -2012,6 +2536,12 @@
     },
     "This update added:\n1. Binary to Denary and inversely conversion\n2. Adaptation to iOS 26 Liquid Glass\n\nKnown Issues:\n1. Conversion does not convert negative numbers\n2. Decimal point can be entered in Conversion and will return a wrong value" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This update added:\n1. Binary to denary conversion and vice versa\n2. Adaptation to iOS 26 Liquid Glass\n\nKnown issues:\n1. Conversion does not support negative numbers\n2. Decimal points can be entered during conversion and may return incorrect values"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2028,6 +2558,12 @@
     },
     "This update added:\n1. Conversion of Number systems\n2. Better use on Liquid Glass\n3. More localization" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This update added:\n1. Number system conversion\n2. Improved use of Liquid Glass\n3. More localisation"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2044,6 +2580,12 @@
     },
     "This update added:\n1. Finding 2 unknowns of Linear Simultaneous Equation\n2. Length Conversion\n3. Rounding up values on other modes\n4. Distinguish modes in main menu\n5. Improved entering values in in Sequence as keyboard users now can return to go to next TextField" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This update added:\n1. Finding two unknowns in linear simultaneous equations\n2. Length conversion\n3. Rounding values in other modes\n4. Distinguishing modes in the main menu\n5. Improved value entry in sequences, as keyboard users can now press Return to move to the next TextField"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2060,6 +2602,12 @@
     },
     "This update added:\n1. Finding unknown from Simple or Compound interest\n2. New Icon" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This update added:\n1. Finding unknown values from simple or compound interest\n2. New icon"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2074,8 +2622,30 @@
         }
       }
     },
+    "This update added:\n1. More conversion\n2. Added animations" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n1. 更多转换\n2. 添加动画"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n更多換算模式\n動畫"
+          }
+        }
+      }
+    },
     "This update added:\n1. More units to length conversion\n2. More localization" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This update added:\n1. More units for length conversion\n2. More localisation"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2114,6 +2684,12 @@
     },
     "Turning Point" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turning Point"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2121,6 +2697,12 @@
           }
         },
         "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "轉折點"
+          }
+        },
+        "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "轉折點"
@@ -2169,6 +2751,12 @@
             "state" : "translated",
             "value" : "單位(1): %1$@\n單位(2): %2$@"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "單位（1）: %1$@\nUnit（2）: %2$@"
+          }
         }
       }
     },
@@ -2207,6 +2795,12 @@
             "state" : "translated",
             "value" : "未知"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知"
+          }
         }
       }
     },
@@ -2223,11 +2817,23 @@
             "state" : "translated",
             "value" : "未知"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知"
+          }
         }
       }
     },
     "Value < 0" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Value < 0"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2237,13 +2843,25 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "值 > 0"
+            "value" : "值 < 0"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "值 < 0"
           }
         }
       }
     },
     "Value = 0" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Value = 0"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2255,11 +2873,23 @@
             "state" : "translated",
             "value" : "值 = 0"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "值 = 0"
+          }
         }
       }
     },
     "Value > 0" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Value > 0"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2269,7 +2899,13 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "值 < 0"
+            "value" : "值 > 0"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "值 > 0"
           }
         }
       }
@@ -2292,6 +2928,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "版本%1$@，版號%2$@"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本 %1$@，版本編號 %2$@"
           }
         }
       }
@@ -2463,11 +3105,39 @@
             "state" : "translated",
             "value" : "版本1.0，版號14"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本 1.0，版本編號 14"
+          }
+        }
+      }
+    },
+    "Version 1.0, Build 15" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本1.0，内部版本15"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本1.0，版號15"
+          }
         }
       }
     },
     "Waiting..." : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standing by…"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2479,35 +3149,83 @@
             "state" : "translated",
             "value" : "等待中…"
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等待中"
+          }
         }
       }
     },
     "Working out the Discriminant" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finding the Discriminant"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在解判别式"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在解判別式"
           }
         }
       }
     },
     "Working out the Solution" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seeking the Solution"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在解x"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在解答案"
           }
         }
       }
     },
     "Working out the Turning Point" : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finding the Turning Point"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在解转折点"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在解轉折點"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在解轉折點"
           }
         }
       }
@@ -2570,10 +3288,28 @@
     },
     "Your current inputs and results will be cleared." : {
       "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thy present entries and results shall be cleared."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "你当前输入的所有内容将被清除"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你當前鍵入的內容將被清除"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你當前輸入的內容將被清理"
           }
         }
       }

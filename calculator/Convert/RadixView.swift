@@ -36,7 +36,7 @@ enum Radix: String, CaseIterable, Identifiable, Equatable {
         case .octal:
             return String(localized: "Octal")
         case .denary:
-            return String(localized: "Denary")
+            return String(localized: "Decimal")
         case .hexa:
             return String(localized: "Hexadecimal")
         }
@@ -47,10 +47,24 @@ struct RadixView: View {
     
     @State private var input: String = ""
     @State private var initial: Radix = .binary
-    @State private var output2 = ""
-    @State private var output8 = ""
-    @State private var output10 = ""
-    @State private var output16 = ""
+    @State private var output2 = "－"
+    @State private var output8 = "－"
+    @State private var output10 = "－"
+    @State private var output16 = "－"
+    
+    func increment() {
+        guard let number = Int(input, radix: initial.value) else {
+            return
+        }
+        input = String(number + 1, radix: initial.value).uppercased()
+    }
+    
+    func decrement() {
+        guard let number = Int(input, radix: initial.value) else {
+            return
+        }
+        input = String(number - 1, radix: initial.value).uppercased()
+    }
     
     func convert() {
         let mode = initial.value
@@ -58,15 +72,19 @@ struct RadixView: View {
         let number: Int? = Int(input, radix: mode)
 
         if let number {
-            output2 = String(number, radix: 2)
-            output8 = String(number, radix: 8)
-            output10 = String(number)
-            output16 = String(number, radix: 16).uppercased()
+            withAnimation(.smooth) {
+                output2 = String(number, radix: 2)
+                output8 = String(number, radix: 8)
+                output10 = String(number)
+                output16 = String(number, radix: 16).uppercased()
+            }
         } else {
-            output2 = "－"
-            output8 = "－"
-            output10 = "－"
-            output16 = "－"
+            withAnimation(.smooth) {
+                output2 = "－"
+                output8 = "－"
+                output10 = "－"
+                output16 = "－"
+            }
         }
     }
     
@@ -89,16 +107,35 @@ struct RadixView: View {
                 
                 Spacer(minLength: 20)
                 
-                TextField("Enter input", text: $input)
-                    .keyboardType(.asciiCapable)
-                    .modifier(CalculatorTextFieldStyle())
-                    .onChange(of: input) {
-                        convert()
+                HStack(spacing: 20) {
+                    TextField("Enter input", text: $input)
+                        .keyboardType(.asciiCapable)
+                        .modifier(CalculatorTextFieldStyle())
+                        .onChange(of: input) {
+                            convert()
+                        }
+                        .onChange(of: initial) {
+                            convert()
+                        }
+                        .layoutPriority(1)
+                    
+                    Button {
+                        decrement()
+                    } label: {
+                        Image(systemName: "minus")
+                            .frame(width: 40, height: 24)
                     }
-                    .onChange(of: initial) {
-                        convert()
+
+                    Button {
+                        increment()
+                    } label: {
+                        Image(systemName: "plus")
+                            .frame(width: 40, height: 24)
                     }
-                    .padding()
+                }
+                .buttonStyle(.bordered)
+                .tint(.primary)
+                .padding(.horizontal)
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
@@ -109,21 +146,25 @@ struct RadixView: View {
                             Text("Binary:")
                             Spacer()
                             Text(output2)
+                                .contentTransition(.numericText())
                         }
                         HStack {
                             Text("Octal:")
                             Spacer()
                             Text(output8)
+                                .contentTransition(.numericText())
                         }
                         HStack {
-                            Text("Denary:")
+                            Text("Decimal:")
                             Spacer()
                             Text(output10)
+                                .contentTransition(.numericText())
                         }
                         HStack {
                             Text("Hexadecimal:")
                             Spacer()
                             Text(output16)
+                                .contentTransition(.numericText())
                         }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)

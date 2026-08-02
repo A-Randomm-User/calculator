@@ -11,6 +11,25 @@ struct ChangelogView: View {
     var body: some View {
         ScrollView {
             VStack {
+                Text("Version 1.0, Build 15")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                Text("Released in: 2026.08.02")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Text("""
+                     This update added:
+                     1. More conversion
+                     2. Added animations
+                     """)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                Spacer(minLength: 50)
+                
                 Text("Version 1.0, Build 14")
                     .font(.title3)
                     .fontWeight(.bold)
