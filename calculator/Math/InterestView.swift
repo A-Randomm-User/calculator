@@ -117,13 +117,11 @@ struct InterestView: View {
                 Spacer(minLength: 20)
                 
                 Text("Click \(Image(systemName: "questionmark")) to set it as unknown, \"-1\" means unknown")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                 
                 Text("Current mode: \(mode)")
                     .fontWeight(.bold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                 
                 HStack(spacing: 0.1) {
                     TextField("Original Amount", value: $original, format: .number)
@@ -134,18 +132,7 @@ struct InterestView: View {
                             displayAnswer = ""
                         }
                     
-                    Button {
-                        original = -1
-                        originalAnimate.toggle()
-                    } label: {
-                        Image(systemName: "questionmark")
-                            .symbolEffect(
-                                .bounce.down.byLayer,
-                                options: .nonRepeating,
-                                value: originalAnimate)
-                    }
-                    .padding()
-                    .tint(.primary)
+                    UnknownButton(value: $original)
                     
                     Spacer()
                 }
@@ -159,18 +146,7 @@ struct InterestView: View {
                             displayAnswer = ""
                         }
                     
-                    Button {
-                        rate = -1
-                        rateAnimate.toggle()
-                    } label: {
-                        Image(systemName: "questionmark")
-                            .symbolEffect(
-                                .bounce.down.byLayer,
-                                options: .nonRepeating,
-                                value: rateAnimate)
-                    }
-                    .padding()
-                    .tint(.primary)
+                    UnknownButton(value: $rate)
                     
                     Spacer()
                 }
@@ -184,18 +160,7 @@ struct InterestView: View {
                             displayAnswer = ""
                         }
                     
-                    Button {
-                        year = -1
-                        yearAnimate.toggle()
-                    } label: {
-                        Image(systemName: "questionmark")
-                            .symbolEffect(
-                                .bounce.down.byLayer,
-                                options: .nonRepeating,
-                                value: yearAnimate)
-                    }
-                    .padding()
-                    .tint(.primary)
+                    UnknownButton(value: $year)
                     
                     Spacer()
                 }
@@ -209,26 +174,14 @@ struct InterestView: View {
                             displayAnswer = ""
                         }
                     
-                    Button {
-                        final = -1
-                        finalAnimate.toggle()
-                    } label: {
-                        Image(systemName: "questionmark")
-                            .symbolEffect(
-                                .bounce.down.byLayer,
-                                options: .nonRepeating,
-                                value: finalAnimate)
-                    }
-                    .padding()
-                    .tint(.primary)
+                    UnknownButton(value: $final)
                     
                     Spacer()
                 }
                 
                 Text("Do not include the original amount in the final amount in Simple Interest")
                     .font(.footnote)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                 
                 Spacer(minLength: 20)
                 
@@ -291,23 +244,18 @@ struct InterestView: View {
                         .opacity(0.10)
                         .padding(.horizontal)
                     VStack(alignment: .leading) {
-                        Text("Unknown")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal)
-                        Text("\(localizedTarget)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal)
-                        
-                        Spacer(minLength: 30)
-                        
-                        Text("Answer")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal)
-                        Text("\(displayAnswer)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal)
-                        
-                        Spacer(minLength: 30)
+                        Group {
+                            Text("Unknown")
+                            Text("\(localizedTarget)")
+                            
+                            Spacer(minLength: 30)
+                            
+                            Text("Answer")
+                            Text("\(displayAnswer)")
+                            
+                            Spacer(minLength: 30)
+                        }
+                        .modifier(TextAlignmentLeadingStyle())
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 13)

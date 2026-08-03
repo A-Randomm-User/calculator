@@ -184,8 +184,7 @@ struct SequenceView: View {
                 Spacer(minLength: 20)
                 
                 Text("n₁")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 
                 HStack {
@@ -223,8 +222,7 @@ struct SequenceView: View {
                 }
                 
                 Text("n₂")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
 
                 HStack {
@@ -262,8 +260,7 @@ struct SequenceView: View {
                 }
                 
                 Text("n₃")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
 
                 HStack {
@@ -301,8 +298,7 @@ struct SequenceView: View {
                 }
                 
                 Text("n₄")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
 
                 HStack {
@@ -340,8 +336,7 @@ struct SequenceView: View {
                 }
                 
                 Text("n₅")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
 
                 HStack {

@@ -45,12 +45,11 @@ struct SimultaneousView: View {
                 
                 Text("a₁ + b₁ = c₁\na₂ + b₂ = c₂")
                     .fontWeight(.medium)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding()
                 
                 Text("a₁:")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 HStack(spacing: 0.1) {
                     TextField("Enter for a₁", value: $a1, format: .number)
@@ -79,8 +78,7 @@ struct SimultaneousView: View {
                 }
                 
                 Text("b₁:")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 HStack(spacing: 0.1) {
                     TextField("Enter for b₁", value: $b1, format: .number)
@@ -109,8 +107,7 @@ struct SimultaneousView: View {
                 }
                 
                 Text("c₁")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 
                 HStack(spacing: 0.1) {
@@ -140,8 +137,7 @@ struct SimultaneousView: View {
                 }
                 
                 Text("a₂:")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 HStack(spacing: 0.1) {
                     TextField("Enter for a₂", value: $a2, format: .number)
@@ -166,8 +162,7 @@ struct SimultaneousView: View {
                 }
                 
                 Text("b₂:")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 HStack(spacing: 0.1) {
                     TextField("Enter for b₂", value: $b2, format: .number)
@@ -196,8 +191,7 @@ struct SimultaneousView: View {
                 }
                 
                 Text("c₂")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 
                 HStack(spacing: 0.1) {
@@ -226,32 +220,6 @@ struct SimultaneousView: View {
                     Spacer()
                 }
                 
-                Group {
-                    if #available(iOS 26.0, *) {
-                        Button {
-                            FindSolution()
-                        } label: {
-                            Text("Find unknown")
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 5)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.horizontal)
-                        .buttonStyle(.glassProminent)
-                    } else {
-                        Button {
-                            FindSolution()
-                        } label: {
-                            Text("Find unknown")
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, 5)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.horizontal)
-                        .buttonStyle(.borderedProminent)
-                    }
-                }
-                
                 Spacer(minLength: 20)
                 
                 ZStack {
@@ -269,6 +237,34 @@ struct SimultaneousView: View {
                     .padding(.vertical, 20)
                 }
                 .padding(.horizontal, 1)
+            }
+        }
+        
+        .safeAreaInset(edge: .bottom) {
+            Group {
+                if #available(iOS 26.0, *) {
+                    Button {
+                        FindSolution()
+                    } label: {
+                        Text("Find unknown")
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 5)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal)
+                    .buttonStyle(.glassProminent)
+                } else {
+                    Button {
+                        FindSolution()
+                    } label: {
+                        Text("Find unknown")
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 5)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal)
+                    .buttonStyle(.borderedProminent)
+                }
             }
         }
     }

@@ -1,5 +1,13 @@
+//
+//  ContentView.swift
+//  calculator
+//
+//  Created by Aaron on 09/07/2026.
+//
+
 import SwiftUI
 
+// TextField format
 struct CalculatorTextFieldStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -12,6 +20,41 @@ struct CalculatorTextFieldStyle: ViewModifier {
             }
     }
 }
+
+// --------------------------------------
+// Leading Text with Padding format
+struct TextAlignmentLeadingStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
+    }
+}
+
+// --------------------------------------
+// "?" button
+struct UnknownButton: View {
+    @Binding var value: Double?
+    @State private var animate = false
+
+    var body: some View {
+        Button {
+            value = -1
+            animate.toggle()
+        } label: {
+            Image(systemName: "questionmark")
+                .symbolEffect(
+                    .bounce.down.byLayer,
+                    options: .nonRepeating,
+                    value: animate
+                )
+        }
+        .padding()
+        .tint(.primary)
+    }
+}
+
+// --------------------------------------
 
 struct ContentView: View {
     
@@ -39,6 +82,10 @@ struct ContentView: View {
                     
                     NavigationLink(value: "simultaneous") {
                         Text("Solve 2 unknowns of Linear Simultaneous Equation")
+                    }
+                    
+                    NavigationLink(value: "shapeArea") {
+                        Text("Find Area of Shape")
                     }
                 }
                 
@@ -89,6 +136,9 @@ struct ContentView: View {
                         
                     case "simultaneous":
                         SimultaneousView()
+                        
+                    case "shapeArea":
+                        CalcAreaView()
                         
                     case "radix":
                         RadixView()

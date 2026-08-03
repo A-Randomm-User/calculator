@@ -254,6 +254,22 @@
         }
       }
     },
+    "Area" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "面积"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "面积"
+          }
+        }
+      }
+    },
     "Area Conversion" : {
       "localizations" : {
         "zh-Hans" : {
@@ -346,6 +362,16 @@
         }
       }
     },
+    "Base" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "底"
+          }
+        }
+      }
+    },
     "Binary" : {
       "localizations" : {
         "zh-Hans" : {
@@ -374,6 +400,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "二進位"
+          }
+        }
+      }
+    },
+    "Bottom base length" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下底"
           }
         }
       }
@@ -541,6 +577,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "公分（cm）"
+          }
+        }
+      }
+    },
+    "circle" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "圆形"
           }
         }
       }
@@ -1082,6 +1128,16 @@
         }
       }
     },
+    "Exact Form: %@π\n" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "精确值：%@π"
+          }
+        }
+      }
+    },
     "fathom (fm)" : {
       "localizations" : {
         "en-GB" : {
@@ -1116,6 +1172,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "最終金額"
+          }
+        }
+      }
+    },
+    "Find Area" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "找"
+          }
+        }
+      }
+    },
+    "Find Area of Shape" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "找形状面积"
           }
         }
       }
@@ -1238,6 +1314,16 @@
         }
       }
     },
+    "Height" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高"
+          }
+        }
+      }
+    },
     "Hexadecimal" : {
       "localizations" : {
         "zh-Hans" : {
@@ -1342,6 +1428,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "公里（km）"
+          }
+        }
+      }
+    },
+    "Leave it empty to make it as unknown" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "留空来设为x"
+          }
+        }
+      }
+    },
+    "Length" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "长"
           }
         }
       }
@@ -1965,6 +2071,16 @@
         }
       }
     },
+    "Radius" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "半径"
+          }
+        }
+      }
+    },
     "Rate" : {
       "localizations" : {
         "zh-Hans" : {
@@ -1983,6 +2099,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "利率"
+          }
+        }
+      }
+    },
+    "rectangle" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正方形"
           }
         }
       }
@@ -2135,6 +2261,9 @@
         }
       }
     },
+    "Released in: 2026.08.03" : {
+
+    },
     "Roots" : {
       "localizations" : {
         "zh-Hans" : {
@@ -2153,6 +2282,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "根"
+          }
+        }
+      }
+    },
+    "Rounded Value: %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "近似值：%@"
           }
         }
       }
@@ -2191,6 +2330,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "選擇模式"
+          }
+        }
+      }
+    },
+    "Select Shape" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择形状"
           }
         }
       }
@@ -2502,6 +2651,26 @@
         }
       }
     },
+    "square" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正方形"
+          }
+        }
+      }
+    },
+    "There should be only 1 unknown" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只能拥有一个x"
+          }
+        }
+      }
+    },
     "This update added:\n1. Animations on Quadratic\n2. Sidebar on iPad and Mac" : {
       "localizations" : {
         "zh-Hans" : {
@@ -2514,6 +2683,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "本次更新新增：\n二次方程動畫\n側欄"
+          }
+        }
+      }
+    },
+    "This update added:\n1. Area calculations\n2. Optimize code" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "本次更新新增：\n1. 面积计算\n2. 优化代码"
           }
         }
       }
@@ -2678,6 +2857,48 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "本次更新新增：\n全新圖示\n多國語言支援\n\n修正：\n修正聯立方程式缺少按鈕的問題\n修正長度換算未包含位移單位的問題\n統一聯立方程式在 iOS 17 與 iOS 18 的文字輸入框長度"
+          }
+        }
+      }
+    },
+    "Top base length" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上底"
+          }
+        }
+      }
+    },
+    "trapezoid" : {
+      "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "trapezium"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "梯形"
+          }
+        }
+      }
+    },
+    "triangle" : {
+      "localizations" : {
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "triangle"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "三角形"
           }
         }
       }
@@ -3130,6 +3351,16 @@
         }
       }
     },
+    "Version 1.0, Build 16" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本1.0，内部版本16"
+          }
+        }
+      }
+    },
     "Waiting..." : {
       "localizations" : {
         "en-GB" : {
@@ -3154,6 +3385,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "等待中"
+          }
+        }
+      }
+    },
+    "Width" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "宽"
           }
         }
       }

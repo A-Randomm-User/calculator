@@ -682,8 +682,7 @@ struct QuadraticView: View {
         ScrollView {
             VStack {
                 Text("Coefficient a")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 HStack(spacing: 1) {
                     TextField("1", value: $a, format: .number)
@@ -716,8 +715,7 @@ struct QuadraticView: View {
                 }
                 
                 Text("Coefficient b")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 HStack(spacing: 1) {
                     TextField("b", value: $b, format: .number)
@@ -751,8 +749,7 @@ struct QuadraticView: View {
                 
                 
                 Text("Coefficient c")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+                    .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 HStack(spacing: 1) {
                     TextField("c", value: $c, format: .number)
@@ -790,6 +787,7 @@ struct QuadraticView: View {
                     
                     Toggle("Complex Math", isOn: $complexMath)
                         .padding()
+                        .disabled(isSolving)
                     
                     Spacer()
                     
@@ -819,35 +817,29 @@ struct QuadraticView: View {
                         .padding(.horizontal)
                     
                     VStack(alignment: .leading) {
-                        Text(discrText)
-                            .fontWeight(.bold)
-                            .contentTransition(.numericText())
-                        Text(stepsText)
-                            .contentTransition(.numericText())
-                        Text("\(discriminant.description)")
-                            .contentTransition(.numericText())
-                        
-                        Spacer(minLength: 20)
-                        
-                        Text(soluText)
-                            .fontWeight(.bold)
-                            .contentTransition(.numericText())
-                        Text(quadStepsText)
-                            .contentTransition(.numericText())
-                        Text("\(solutionText)")
-                            .contentTransition(.numericText())
-                        
-                        Spacer(minLength: 20)
-                        
-                        Text(turnText)
-                            .fontWeight(.bold)
-                            .contentTransition(.numericText())
-                        Text(turnStepsText)
-                            .contentTransition(.numericText())
-                        Text("\(turningPoint)")
-                            .contentTransition(.numericText())
-                                                
-                        Spacer(minLength: 20)
+                        Group {
+                            Text(discrText)
+                                .fontWeight(.bold)
+                            Text(stepsText)
+                            Text("\(discriminant.description)")
+                            
+                            Spacer(minLength: 20)
+                            
+                            Text(soluText)
+                                .fontWeight(.bold)
+                            Text(quadStepsText)
+                            Text("\(solutionText)")
+                            
+                            Spacer(minLength: 20)
+                            
+                            Text(turnText)
+                                .fontWeight(.bold)
+                            Text(turnStepsText)
+                            Text("\(turningPoint)")
+                                                    
+                            Spacer(minLength: 20)
+                        }
+                        .contentTransition(.numericText())
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 35)

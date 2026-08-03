@@ -46,9 +46,8 @@ struct AreaView: View {
         ScrollView {
             VStack {
                 Text("Unit (1): \(initialUnit)\nUnit (2): \(wantedUnit)")
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .modifier(TextAlignmentLeadingStyle())
                     .multilineTextAlignment(.leading)
-                    .padding(.horizontal)
                 
                 HStack {
                     TextField("Enter input", value: $input, format: .number)
