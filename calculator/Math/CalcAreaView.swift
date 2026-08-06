@@ -11,9 +11,13 @@ import Foundation
 enum AreaShape: String, CaseIterable, Identifiable, Equatable {
     case circle
     case triangle
+    case triangleSin
     case square
     case rectangle
     case trapezoid // in British English - trapezium
+    case rhombus
+    case parallelogram
+    case kite
     
     var id: String { self.rawValue }
 
@@ -22,13 +26,21 @@ enum AreaShape: String, CaseIterable, Identifiable, Equatable {
         case .circle:
             return String(localized: "circle")
         case .triangle:
-            return String(localized: "triangle")
+            return String(localized: "triangle (with perpendicular height)")
+        case .triangleSin:
+            return String(localized: "triangle (with included angle)")
         case .square:
             return String(localized: "square")
         case .rectangle:
             return String(localized: "rectangle")
         case .trapezoid:
             return String(localized: "trapezoid")
+        case .rhombus:
+            return String(localized: "rhombus")
+        case .parallelogram:
+            return String(localized: "parallelogram")
+        case .kite:
+            return String(localized: "kite")
         }
     }
 }
@@ -46,6 +58,9 @@ struct CalcAreaView: View {
     @State private var base: Double?
     @State private var topBase: Double?
     @State private var bottomBase: Double?
+    @State private var a: Double?
+    @State private var b: Double?
+    @State private var sinc: Double?
     @State private var solution: Double?
     
     @State private var isSolving = false
@@ -72,6 +87,9 @@ struct CalcAreaView: View {
         base = nil
         topBase = nil
         bottomBase = nil
+        a = nil
+        b = nil
+        sinc = nil
         solution = nil
         answer = ""
     }
@@ -210,21 +228,149 @@ struct CalcAreaView: View {
         }
     }
     
+    func triangleSinFormula() {
+        if a != nil && b != nil && sinc != nil && solution == nil {
+            if let a, let b, let sinc {
+                Task { @MainActor in
+                    isSolving = true
+                    withAnimation(.smooth) {
+                        answer = "ar = 0.5 * a * b * sin(c)\n"
+                    }
+                    await wait(1)
+                    withAnimation(.smooth) {
+                        answer += "ar = 0.5 * \(a) * \(b) * sin(\(sinc))\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "ar = 0.5 * \(a * b) * \(sin(sinc))\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "ar = \(0.5 * a * b * sin(sinc))"
+                    }
+                    isSolving = false
+                }
+            }
+        } else if a == nil && b != nil && sinc != nil && solution != nil {
+            if let b, let sinc, let solution {
+                Task { @MainActor in
+                    isSolving = true
+                    withAnimation(.smooth) {
+                        answer = "ar = 0.5 * a * b * sin(c)\n"
+                    }
+                    await wait(1)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = 0.5 * a * \(b) * sin(\(sinc))\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = a * \(0.5 * b) * sin(\(sinc))\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = a * \(0.5 * b) * \(sin(sinc))\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = a * \(0.5 * b * sin(sinc))\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) / \(0.5 * b * sin(sinc)) = a\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "a = \(solution / (0.5 * b * sin(sinc)))"
+                    }
+                    isSolving = false
+                }
+            }
+        } else if a != nil && b == nil && sinc != nil && solution != nil {
+            if let a, let sinc, let solution {
+                Task { @MainActor in
+                    isSolving = true
+                    withAnimation(.smooth) {
+                        answer = "ar = 0.5 * a * b * sin(c)\n"
+                    }
+                    await wait(1)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = 0.5 * \(a) * b * sin(\(sinc))\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = b * \(0.5 * a) * sin(\(sinc))\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = b * \(0.5 * a) * \(sin(sinc))\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = b * \(0.5 * a * sin(sinc))\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) / \(0.5 * a * sin(sinc)) = b\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "b = \(solution / (0.5 * a * sin(sinc)))"
+                    }
+                    isSolving = false
+                }
+            }
+        } else if a != nil && b != nil && sinc == nil && solution != nil {
+            if let a, let b, let solution {
+                Task { @MainActor in
+                    isSolving = true
+                    withAnimation(.smooth) {
+                        answer = "ar = 0.5 * a * b * sin(c)\n"
+                    }
+                    await wait(1)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = 0.5 * \(a) * \(b) * sin(c)"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = \(0.5 * a * b) * sin(c)"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "sin(c) = \(solution) / \(0.5 * a * b)"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "sin(c) = \(solution / (0.5 * a * b))"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "c = sin⁻¹(\(solution / (0.5 * a * b)))"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "c = \(asin(solution / (0.5 * a * b)))"
+                    }
+                    isSolving = false
+                }
+            }
+        }
+    }
+    
     func squareFormula() {
         if length != nil && solution == nil {
             if let length {
                 isSolving = true
                 Task { @MainActor in
                     withAnimation(.smooth) {
-                        answer = "a = l²"
+                        answer = "a = l²\n"
                     }
                     await wait(1)
                     withAnimation(.smooth) {
-                        answer = "a = \(length)²"
+                        answer += "a = \(length)²\n"
                     }
                     await wait(0.7)
                     withAnimation(.smooth) {
-                        answer = "a = \(length * length)"
+                        answer += "a = \(length * length)"
                     }
                     isSolving = false
                 }
@@ -234,15 +380,15 @@ struct CalcAreaView: View {
                 Task { @MainActor in
                     isSolving = true
                     withAnimation(.smooth) {
-                        answer = "l² = \(solution)"
+                        answer = "l² = \(solution)\n"
                     }
                     await wait(1)
                     withAnimation(.smooth) {
-                        answer = "l = √\(solution)"
+                        answer += "l = √\(solution)\n"
                     }
                     await wait(0.7)
                     withAnimation(.smooth) {
-                        answer = "l = \(sqrt(solution))"
+                        answer += "l = \(sqrt(solution))"
                     }
                     isSolving = false
                 }
@@ -455,6 +601,74 @@ struct CalcAreaView: View {
         }
     }
     
+    func kiteFormula() {
+        if a != nil && b != nil && solution == nil {
+            if let a, let b {
+                Task { @MainActor in
+                    withAnimation(.smooth) {
+                        answer = "ar = 0.5 * a * b\n"
+                    }
+                    await wait(1)
+                    withAnimation(.smooth) {
+                        answer += "ar = 0.5 * \(a) * \(b)\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "ar = \(0.5 * a * b)"
+                    }
+                }
+            }
+        } else if a == nil && b != nil && solution != nil {
+            if let b, let solution {
+                Task { @MainActor in
+                    withAnimation(.smooth) {
+                        answer = "ar = 0.5 * a * b\n"
+                    }
+                    await wait(1)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = 0.5 * a * \(b)\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) / (0.5 * \(b)) = a"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "a = \(solution) / \(0.5 * b)"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "a = \(solution / (0.5 * b))"
+                    }
+                }
+            }
+        } else if a != nil && b == nil && solution != nil {
+            if let a, let solution {
+                Task { @MainActor in
+                    withAnimation(.smooth) {
+                        answer = "ar = 0.5 * a * b\n"
+                    }
+                    await wait(1)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) = 0.5 * b * \(a)\n"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "\(solution) / (0.5 * \(a)) = b"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "b = \(solution) / \(0.5 * a)"
+                    }
+                    await wait(0.7)
+                    withAnimation(.smooth) {
+                        answer += "b = \(solution / (0.5 * a))"
+                    }
+                }
+            }
+        }
+    }
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -664,6 +878,140 @@ struct CalcAreaView: View {
                                 answer = ""
                             }
                             .disabled(isSolving)
+                    } else if shape == .rhombus || shape == .parallelogram {
+                        Text("Perpendicular Height")
+                            .modifier(TextAlignmentLeadingStyle())
+                            .padding(.vertical, -10)
+                        
+                        TextField("Perpendicular Height", value: $width, format: .number)
+                            .keyboardType(.decimalPad)
+                            .modifier(CalculatorTextFieldStyle())
+                            .onChange(of: width) {
+                                answer = ""
+                            }
+                            .disabled(isSolving)
+                        
+                        Spacer(minLength: 20)
+                        
+                        Text("Length")
+                            .modifier(TextAlignmentLeadingStyle())
+                            .padding(.vertical, -10)
+                        
+                        TextField("Length", value: $length, format: .number)
+                            .keyboardType(.decimalPad)
+                            .modifier(CalculatorTextFieldStyle())
+                            .onChange(of: length) {
+                                answer = ""
+                            }
+                            .disabled(isSolving)
+                        
+                        Spacer(minLength: 25)
+                        
+                        Text("Area")
+                            .modifier(TextAlignmentLeadingStyle())
+                            .padding(.vertical, -10)
+                        
+                        TextField("Area", value: $solution, format: .number)
+                            .keyboardType(.decimalPad)
+                            .modifier(CalculatorTextFieldStyle())
+                            .onChange(of: solution) {
+                                answer = ""
+                            }
+                            .disabled(isSolving)
+                    } else if shape == .triangleSin {
+                        Text("a")
+                            .modifier(TextAlignmentLeadingStyle())
+                            .padding(.vertical, -10)
+                        
+                        TextField("a", value: $a, format: .number)
+                            .keyboardType(.decimalPad)
+                            .modifier(CalculatorTextFieldStyle())
+                            .onChange(of: a) {
+                                answer = ""
+                            }
+                            .disabled(isSolving)
+                        
+                        Spacer(minLength: 20)
+                        
+                        Text("b")
+                            .modifier(TextAlignmentLeadingStyle())
+                            .padding(.vertical, -10)
+                        
+                        TextField("b", value: $b, format: .number)
+                            .keyboardType(.decimalPad)
+                            .modifier(CalculatorTextFieldStyle())
+                            .onChange(of: b) {
+                                answer = ""
+                            }
+                            .disabled(isSolving)
+                        
+                        Spacer(minLength: 20)
+                        
+                        Text("angle c")
+                            .modifier(TextAlignmentLeadingStyle())
+                            .padding(.vertical, -10)
+                        
+                        TextField("angle c", value: $sinc, format: .number)
+                            .keyboardType(.decimalPad)
+                            .modifier(CalculatorTextFieldStyle())
+                            .onChange(of: sinc) {
+                                answer = ""
+                            }
+                            .disabled(isSolving)
+                        
+                        Spacer(minLength: 25)
+                        
+                        Text("Area")
+                            .modifier(TextAlignmentLeadingStyle())
+                            .padding(.vertical, -10)
+                        
+                        TextField("Area", value: $solution, format: .number)
+                            .keyboardType(.decimalPad)
+                            .modifier(CalculatorTextFieldStyle())
+                            .onChange(of: solution) {
+                                answer = ""
+                            }
+                            .disabled(isSolving)
+                    } else if shape == .kite {
+                        Text("diagonal 1")
+                            .modifier(TextAlignmentLeadingStyle())
+                            .padding(.vertical, -10)
+                        
+                        TextField("diagonal 1", value: $a, format: .number)
+                            .keyboardType(.decimalPad)
+                            .modifier(CalculatorTextFieldStyle())
+                            .onChange(of: a) {
+                                answer = ""
+                            }
+                            .disabled(isSolving)
+                        
+                        Spacer(minLength: 20)
+                        
+                        Text("diagonal 2")
+                            .modifier(TextAlignmentLeadingStyle())
+                            .padding(.vertical, -10)
+                        
+                        TextField("diagonal 2", value: $b, format: .number)
+                            .keyboardType(.decimalPad)
+                            .modifier(CalculatorTextFieldStyle())
+                            .onChange(of: b) {
+                                answer = ""
+                            }
+                            .disabled(isSolving)
+                        
+                        Spacer(minLength: 25)
+                        
+                        Text("Area")
+                            .modifier(TextAlignmentLeadingStyle())
+                            .padding(.vertical, -10)
+                        
+                        TextField("Area", value: $solution, format: .number)
+                            .keyboardType(.decimalPad)
+                            .modifier(CalculatorTextFieldStyle())
+                            .onChange(of: solution) {
+                                answer = ""
+                            }
+                            .disabled(isSolving)
                     }
                 }
                 
@@ -710,6 +1058,18 @@ struct CalcAreaView: View {
                         
                         case .trapezoid:
                             trapezoidFormula()
+                            
+                        case .rhombus:
+                            rectangleFormula()
+                            
+                        case .parallelogram:
+                            rectangleFormula()
+                            
+                        case .kite:
+                            kiteFormula()
+                            
+                        case .triangleSin:
+                            triangleSinFormula()
                         }
                     } label: {
                         Text("Find Area")
@@ -737,6 +1097,18 @@ struct CalcAreaView: View {
                         
                         case .trapezoid:
                             trapezoidFormula()
+                            
+                        case .rhombus:
+                            rectangleFormula()
+                            
+                        case .parallelogram:
+                            rectangleFormula()
+                            
+                        case .kite:
+                            kiteFormula()
+                            
+                        case .triangleSin:
+                            triangleSinFormula()
                         }
                     } label: {
                         Text("Find Area")

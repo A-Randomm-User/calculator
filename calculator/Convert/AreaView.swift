@@ -10,17 +10,31 @@ import SwiftUI
 struct AreaView: View {
     
     let units = [
+        //---- metric
         "mm²": 0.000001,
-        "cm²": 0.001,
+        "cm²": 0.0001,
         "dm²": 0.01,
         "m²": 1,
-        "km²": 100000,
+        "km²": 1000000,
+
+        //---- metric land units
+        "are": 100,
+        "daa": 1000,
         "ha": 10000,
+
+        //---- imperial
         "in²": 0.00064516,
         "ft²": 0.09290304,
         "yd²": 0.83612736,
+        "acres": 4046.8564224,
         "mi²": 2589988.110336,
-        "ac": 4046.8564224,
+
+        //---- other land units
+        "str": 1000,
+
+        //---- sports fields
+        "amf": 5351,
+        "af": 7140,
     ]
     
     @AppStorage("areaInitialUnit") private var initialUnit: String = "cm²"
@@ -45,6 +59,140 @@ struct AreaView: View {
     var body: some View {
         ScrollView {
             VStack {
+                HStack(spacing: 20) {
+                    Menu {
+                        Text("Metric")
+                        Button("Square Millimeter (mm²)") {
+                            initialUnit = "mm²"
+                        }
+                        Button("Square Centimeter (cm²)") {
+                            initialUnit = "cm²"
+                        }
+                        Button("Square Decimeter (dm²)") {
+                            initialUnit = "dm²"
+                        }
+                        Button("Square Meter (m²)") {
+                            initialUnit = "m²"
+                        }
+                        Button("Square Kilometer (km²)") {
+                            initialUnit = "km²"
+                        }
+
+                        Text("Metric Land")
+                        Button("Are (a)") {
+                            initialUnit = "are"
+                        }
+                        Button("Decare (daa)") {
+                            initialUnit = "daa"
+                        }
+                        Button("Hectare (ha)") {
+                            initialUnit = "ha"
+                        }
+
+                        Text("Imperial")
+                        Button("Square Inch (in²)") {
+                            initialUnit = "in²"
+                        }
+                        Button("Square Foot (ft²)") {
+                            initialUnit = "ft²"
+                        }
+                        Button("Square Yard (yd²)") {
+                            initialUnit = "yd²"
+                        }
+                        Button("Acre (ac)") {
+                            initialUnit = "acres"
+                        }
+                        Button("Square Mile (mi²)") {
+                            initialUnit = "mi²"
+                        }
+
+                        Text("Other Land")
+                        Button("Stremma (str)") {
+                            initialUnit = "str"
+                        }
+
+                        Text("Sports")
+                        Button("American Football Field") {
+                            initialUnit = "amf"
+                        }
+                        Button("Association Football Field") {
+                            initialUnit = "af"
+                        }
+                    } label: {
+                        Text("Unit (1)")
+                    }
+
+                    Button {
+                        let temp = initialUnit
+                        initialUnit = wantedUnit
+                        wantedUnit = temp
+                    } label: {
+                        Image(systemName: "arrow.right.arrow.left")
+                    }
+                    
+                    Menu {
+                        Text("Metric")
+                        Button("Square Millimeter (mm²)") {
+                            wantedUnit = "mm²"
+                        }
+                        Button("Square Centimeter (cm²)") {
+                            wantedUnit = "cm²"
+                        }
+                        Button("Square Decimeter (dm²)") {
+                            wantedUnit = "dm²"
+                        }
+                        Button("Square Meter (m²)") {
+                            wantedUnit = "m²"
+                        }
+                        Button("Square Kilometer (km²)") {
+                            wantedUnit = "km²"
+                        }
+
+                        Text("Metric Land")
+                        Button("Are (a)") {
+                            wantedUnit = "are"
+                        }
+                        Button("Decare (daa)") {
+                            wantedUnit = "daa"
+                        }
+                        Button("Hectare (ha)") {
+                            wantedUnit = "ha"
+                        }
+
+                        Text("Imperial")
+                        Button("Square Inch (in²)") {
+                            wantedUnit = "in²"
+                        }
+                        Button("Square Foot (ft²)") {
+                            wantedUnit = "ft²"
+                        }
+                        Button("Square Yard (yd²)") {
+                            wantedUnit = "yd²"
+                        }
+                        Button("Acre (ac)") {
+                            wantedUnit = "acres"
+                        }
+                        Button("Square Mile (mi²)") {
+                            wantedUnit = "mi²"
+                        }
+
+                        Text("Other Land")
+                        Button("Stremma (str)") {
+                            wantedUnit = "str"
+                        }
+
+                        Text("Sports")
+                        Button("American Football Field") {
+                            wantedUnit = "amf"
+                        }
+                        Button("Association Football Field") {
+                            wantedUnit = "af"
+                        }
+                    } label: {
+                        Text("Unit (2)")
+                    }
+                }
+                
                 Text("Unit (1): \(initialUnit)\nUnit (2): \(wantedUnit)")
                     .modifier(TextAlignmentLeadingStyle())
                     .multilineTextAlignment(.leading)
@@ -141,95 +289,6 @@ struct AreaView: View {
                     .padding(.vertical, 10)
                 }
                 .padding(.horizontal, 1)
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                HStack(spacing: 20) {
-                    Menu {
-                        Button("Sqr Milimeter (mm²)") {
-                            initialUnit = "mm²"
-                        }
-                        Button("Sqr Centimeter (cm²)") {
-                            initialUnit = "cm²"
-                        }
-                        Button("Sqr Decimeter (dm²)") {
-                            initialUnit = "dm²"
-                        }
-                        Button("Sqr Meter (m²)") {
-                            initialUnit = "m²"
-                        }
-                        Button("Sqr Kilometer (km²)") {
-                            initialUnit = "km²"
-                        }
-                        Button("Hectare (ha)") {
-                            initialUnit = "ha"
-                        }
-                        Button("Sqr Inch (in²)") {
-                            initialUnit = "in²"
-                        }
-                        Button("Sqr Feet (ft²)") {
-                            initialUnit = "ft²"
-                        }
-                        Button("Sqr Yard (yd²)") {
-                            initialUnit = "yd²"
-                        }
-                        Button("Sqr Mile (mi²)") {
-                            initialUnit = "mi²"
-                        }
-                        Button("Acres (ac)") {
-                            initialUnit = "ac"
-                        }
-                    } label: {
-                        Text("Unit (1)")
-                    }
-
-                    Button {
-                        let temp = initialUnit
-                        initialUnit = wantedUnit
-                        wantedUnit = temp
-                    } label: {
-                        Image(systemName: "arrow.right.arrow.left")
-                    }
-                    
-                    Menu {
-                        Button("Sqr Milimeter (mm²)") {
-                            wantedUnit = "mm²"
-                        }
-                        Button("Sqr Centimeter (cm²)") {
-                            wantedUnit = "cm²"
-                        }
-                        Button("Sqr Decimeter (dm²)") {
-                            wantedUnit = "dm²"
-                        }
-                        Button("Sqr Meter (m²)") {
-                            wantedUnit = "m²"
-                        }
-                        Button("Sqr Kilometer (km²)") {
-                            wantedUnit = "km²"
-                        }
-                        Button("Hectare (ha)") {
-                            wantedUnit = "ha"
-                        }
-                        Button("Sqr Inch (in²)") {
-                            wantedUnit = "in²"
-                        }
-                        Button("Sqr Feet (ft²)") {
-                            wantedUnit = "ft²"
-                        }
-                        Button("Sqr Yard (yd²)") {
-                            wantedUnit = "yd²"
-                        }
-                        Button("Sqr Mile (mi²)") {
-                            wantedUnit = "mi²"
-                        }
-                        Button("Acres (ac)") {
-                            wantedUnit = "ac"
-                        }
-                    } label: {
-                        Text("Unit (2)")
-                    }
-                }
             }
         }
         .navigationTitle("Convert area")

@@ -33,9 +33,9 @@ enum Discriminant {
 
 struct QuadraticView: View {
     
-    @State private var a: Double? = nil
-    @State private var b: Double? = nil
-    @State private var c: Double? = nil
+    @State private var a: Double?
+    @State private var b: Double?
+    @State private var c: Double?
     
     @State private var A = ""
     @State private var B = ""
@@ -187,6 +187,7 @@ struct QuadraticView: View {
             }
         }
     }
+    
     func formatNumber(_ value: Double) -> String {
         if value == floor(value) {
             return String(Int(value))

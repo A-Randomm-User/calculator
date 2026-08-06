@@ -12,6 +12,25 @@ struct ChangelogView: View {
         ScrollView {
             VStack {
                 Group {
+                    Text("Version 1.0, Build 17")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        
+                    Text("Released in: 2026.08.07")
+                    
+                    Text("""
+                         This update added:
+                         1. More shapes available
+                         2. Pie Chart
+                         3. Renamed Interest to Model
+                         4. Added more modes to Interest
+                         5. Removed "?" and replace action with leaving empty
+                         6. Volume Conversions
+                         7. More units for Area and Length
+                         """)
+                    
+                    Spacer(minLength: 50)
+                    
                     Text("Version 1.0, Build 16")
                         .font(.title3)
                         .fontWeight(.bold)

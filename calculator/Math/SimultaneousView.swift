@@ -106,7 +106,7 @@ struct SimultaneousView: View {
                     Spacer()
                 }
                 
-                Text("c₁")
+                Text("c₁:")
                     .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 
@@ -190,7 +190,7 @@ struct SimultaneousView: View {
                     Spacer()
                 }
                 
-                Text("c₂")
+                Text("c₂:")
                     .modifier(TextAlignmentLeadingStyle())
                     .padding(.vertical, -10)
                 

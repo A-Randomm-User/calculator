@@ -32,44 +32,21 @@ struct TextAlignmentLeadingStyle: ViewModifier {
 }
 
 // --------------------------------------
-// "?" button
-struct UnknownButton: View {
-    @Binding var value: Double?
-    @State private var animate = false
-
-    var body: some View {
-        Button {
-            value = -1
-            animate.toggle()
-        } label: {
-            Image(systemName: "questionmark")
-                .symbolEffect(
-                    .bounce.down.byLayer,
-                    options: .nonRepeating,
-                    value: animate
-                )
-        }
-        .padding()
-        .tint(.primary)
-    }
-}
-
-// --------------------------------------
 
 struct ContentView: View {
     
     @State private var selectedView: String?
     
     @State var version = "1.0"
-    @State var build = "15"
+    @State var build = "17"
     
     var body: some View {
         NavigationSplitView {
             List(selection: $selectedView) {
                 
                 Section("Math") {
-                    NavigationLink(value: "interest") {
-                        Text("Find unknown on Simple / Compound Interest")
+                    NavigationLink(value: "model") {
+                        Text("Growth and Decay")
                     }
                     
                     NavigationLink(value: "quadratic") {
@@ -85,7 +62,15 @@ struct ContentView: View {
                     }
                     
                     NavigationLink(value: "shapeArea") {
-                        Text("Find Area of Shape")
+                        Text("Find Area of 2D Shape")
+                    }
+                    
+                    NavigationLink(value: "mmmr") {
+                        Text("Measures of central tendency")
+                    }
+                    
+                    NavigationLink(value: "pie") {
+                        Text("Pie Chart")
                     }
                 }
                 
@@ -100,6 +85,10 @@ struct ContentView: View {
                     
                     NavigationLink(value: "area") {
                         Text("Area Conversion")
+                    }
+                    
+                    NavigationLink(value: "volume") {
+                        Text("Volume Conversion")
                     }
                 }
                 
@@ -125,8 +114,8 @@ struct ContentView: View {
                 if let selectedView {
                     switch selectedView {
                         
-                    case "interest":
-                        InterestView()
+                    case "model":
+                        ModelView()
                         
                     case "quadratic":
                         QuadraticView()
@@ -140,6 +129,12 @@ struct ContentView: View {
                     case "shapeArea":
                         CalcAreaView()
                         
+                    case "mmmr":
+                        MMMRView()
+                        
+                    case "pie":
+                        PieChartView()
+                        
                     case "radix":
                         RadixView()
                         
@@ -148,6 +143,9 @@ struct ContentView: View {
                         
                     case "area":
                         AreaView()
+                        
+                    case "volume":
+                        VolumeView()
                         
                     case "about":
                         ChangelogView()

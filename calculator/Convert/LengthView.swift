@@ -10,6 +10,7 @@ import SwiftUI
 struct LengthView: View {
     
     let units = [
+        //---- metric
         "pm": 0.000000000001,
         "nm": 0.000000001,
         "µm": 0.000001,
@@ -17,18 +18,23 @@ struct LengthView: View {
         "cm": 0.01,
         "dm": 0.1,
         "m": 1,
+        "dam": 10,
+        "hm": 100,
         "km": 1000,
+        "Mm": 1000000,
+        //---- imperial
         "in": 0.0254,
         "ft": 0.3048,
         "yd": 0.9144,
         "mi": 1609.344,
         "nmi": 1852,
-        "fm": 1.828800164445711,
+        "fm": 1.8288,
         "fur": 201.168,
+        //---- astronomical
         "AU": 149597870700,
+        "ld": 384402000,
         "ly": 9460730472580800,
         "pc": 30856775814913672.78913938,
-        "ld": 384402000,
     ]
     
     @AppStorage("lengthInitialUnit") private var initialUnit: String = "cm"
@@ -53,6 +59,163 @@ struct LengthView: View {
     var body: some View {
         ScrollView {
             VStack {
+                
+                HStack(spacing: 20) {
+                    Menu {
+                        Text("Metric")
+                        Button("Picometer (pm)") {
+                            initialUnit = "pm"
+                        }
+                        Button("Nanometer (nm)") {
+                            initialUnit = "nm"
+                        }
+                        Button("Micrometer (µm)") {
+                            initialUnit = "µm"
+                        }
+                        Button("Millimeter (mm)") {
+                            initialUnit = "mm"
+                        }
+                        Button("Centimeter (cm)") {
+                            initialUnit = "cm"
+                        }
+                        Button("Decimeter (dm)") {
+                            initialUnit = "dm"
+                        }
+                        Button("Meter (m)") {
+                            initialUnit = "m"
+                        }
+                        Button("Decameter (dam)") {
+                            initialUnit = "dam"
+                        }
+                        Button("Hectometer (hm)") {
+                            initialUnit = "hm"
+                        }
+                        Button("Kilometer (km)") {
+                            initialUnit = "km"
+                        }
+                        Button("Megameter (Mm)") {
+                            initialUnit = "Mm"
+                        }
+
+                        Text("Imperial")
+                        Button("Inch (in)") {
+                            initialUnit = "in"
+                        }
+                        Button("Foot (ft)") {
+                            initialUnit = "ft"
+                        }
+                        Button("Yard (yd)") {
+                            initialUnit = "yd"
+                        }
+                        Button("Mile (mi)") {
+                            initialUnit = "mi"
+                        }
+                        Button("Nautical Mile (nmi)") {
+                            initialUnit = "nmi"
+                        }
+                        Button("Fathom (fm)") {
+                            initialUnit = "fm"
+                        }
+
+                        Text("Others")
+                        Button("Astronomical Unit (AU)") {
+                            initialUnit = "AU"
+                        }
+                        Button("Light Year (ly)") {
+                            initialUnit = "ly"
+                        }
+                        Button("Parsec (pc)") {
+                            initialUnit = "pc"
+                        }
+                        Button("Lunar Distance (ld)") {
+                            initialUnit = "ld"
+                        }
+                    } label: {
+                        Text("Unit (1)")
+                    }
+
+                    Button {
+                        let temp = initialUnit
+                        initialUnit = wantedUnit
+                        wantedUnit = temp
+                    } label: {
+                        Image(systemName: "arrow.right.arrow.left")
+                    }
+                    
+                    Menu {
+                        Text("Metric")
+                        Button("Picometer (pm)") {
+                            wantedUnit = "pm"
+                        }
+                        Button("Nanometer (nm)") {
+                            wantedUnit = "nm"
+                        }
+                        Button("Micrometer (µm)") {
+                            wantedUnit = "µm"
+                        }
+                        Button("Millimeter (mm)") {
+                            wantedUnit = "mm"
+                        }
+                        Button("Centimeter (cm)") {
+                            wantedUnit = "cm"
+                        }
+                        Button("Decimeter (dm)") {
+                            wantedUnit = "dm"
+                        }
+                        Button("Meter (m)") {
+                            wantedUnit = "m"
+                        }
+                        Button("Decameter (dam)") {
+                            wantedUnit = "dam"
+                        }
+                        Button("Hectometer (hm)") {
+                            wantedUnit = "hm"
+                        }
+                        Button("Kilometer (km)") {
+                            wantedUnit = "km"
+                        }
+                        Button("Megameter (Mm)") {
+                            wantedUnit = "Mm"
+                        }
+
+                        Text("Imperial")
+                        Button("Inch (in)") {
+                            initialUnit = "in"
+                        }
+                        Button("Foot (ft)") {
+                            wantedUnit = "ft"
+                        }
+                        Button("Yard (yd)") {
+                            wantedUnit = "yd"
+                        }
+                        Button("Mile (mi)") {
+                            wantedUnit = "mi"
+                        }
+                        Button("Nautical Mile (nmi)") {
+                            wantedUnit = "nmi"
+                        }
+                        Button("Fathom (fm)") {
+                            wantedUnit = "fm"
+                        }
+
+                        Text("Others")
+                        Button("Astronomical Unit (AU)") {
+                            wantedUnit = "AU"
+                        }
+                        Button("Light Year (ly)") {
+                            wantedUnit = "ly"
+                        }
+                        Button("Parsec (pc)") {
+                            wantedUnit = "pc"
+                        }
+                        Button("Lunar Distance (ld)") {
+                            wantedUnit = "ld"
+                        }
+                    } label: {
+                        Text("Unit (2)")
+                    }
+                }
+                
                 Text("Unit (1): \(initialUnit)\nUnit (2): \(wantedUnit)")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .multilineTextAlignment(.leading)
@@ -150,137 +313,6 @@ struct LengthView: View {
                     .padding(.vertical, 10)
                 }
                 .padding(.horizontal, 1)
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                HStack(spacing: 20) {
-                    Menu {
-                        Button("Picometer (pm)") {
-                            initialUnit = "pm"
-                        }
-                        Button("Nanometer (nm)") {
-                            initialUnit = "nm"
-                        }
-                        Button("Micrometers (µm)") {
-                            initialUnit = "µm"
-                        }
-                        Button("Milimeters (mm)") {
-                            initialUnit = "mm"
-                        }
-                        Button("Centimeters (cm)") {
-                            initialUnit = "cm"
-                        }
-                        Button("Decimeters (dm)") {
-                            initialUnit = "dm"
-                        }
-                        Button("Meters (m)") {
-                            initialUnit = "m"
-                        }
-                        Button("Kilometers (km)") {
-                            initialUnit = "km"
-                        }
-                        Button("Inch (in)") {
-                            initialUnit = "in"
-                        }
-                        Button("Foot (ft)") {
-                            initialUnit = "ft"
-                        }
-                        Button("Yard (yd)") {
-                            initialUnit = "yd"
-                        }
-                        Button("Miles (mi)") {
-                            initialUnit = "mi"
-                        }
-                        Button("Nautical mile (nmi)") {
-                            initialUnit = "nmi"
-                        }
-                        Button("fathom (fm)") {
-                            initialUnit = "fm"
-                        }
-                        Button("Astronomical Unit (AU)") {
-                            initialUnit = "AU"
-                        }
-                        Button("Light years (ly)") {
-                            initialUnit = "ly"
-                        }
-                        Button("Parsec (pc)") {
-                            initialUnit = "pc"
-                        }
-                        Button("Lunar distance (ld)") {
-                            initialUnit = "ld"
-                        }
-                    } label: {
-                        Text("Unit (1)")
-                    }
-
-                    Button {
-                        let temp = initialUnit
-                        initialUnit = wantedUnit
-                        wantedUnit = temp
-                    } label: {
-                        Image(systemName: "arrow.right.arrow.left")
-                    }
-                    
-                    Menu {
-                        Button("Picometer (pm)") {
-                            wantedUnit = "pm"
-                        }
-                        Button("Nanometer (nm)") {
-                            wantedUnit = "nm"
-                        }
-                        Button("Micrometers (µm)") {
-                            wantedUnit = "µm"
-                        }
-                        Button("Milimeters (mm)") {
-                            wantedUnit = "mm"
-                        }
-                        Button("Centimeters (cm)") {
-                            wantedUnit = "cm"
-                        }
-                        Button("Decimeters (dm)") {
-                            wantedUnit = "dm"
-                        }
-                        Button("Meters (m)") {
-                            wantedUnit = "m"
-                        }
-                        Button("Kilometers (km)") {
-                            wantedUnit = "km"
-                        }
-                        Button("Inch (in)") {
-                            wantedUnit = "in"
-                        }
-                        Button("Foot (ft)") {
-                            wantedUnit = "ft"
-                        }
-                        Button("Yard (yd)") {
-                            wantedUnit = "yd"
-                        }
-                        Button("Miles (mi)") {
-                            wantedUnit = "mi"
-                        }
-                        Button("Nautical mile (nmi)") {
-                            wantedUnit = "nmi"
-                        }
-                        Button("fathom (fm)") {
-                            wantedUnit = "fm"
-                        }
-                        Button("Astronomical Unit (AU)") {
-                            wantedUnit = "AU"
-                        }
-                        Button("Light years (ly)") {
-                            wantedUnit = "ly"
-                        }
-                        Button("Parsec (pc)") {
-                            wantedUnit = "pc"
-                        }
-                        Button("Lunar distance (ld)") {
-                            wantedUnit = "ld"
-                        }
-                    } label: {
-                        Text("Unit (2)")
-                    }
-                }
             }
         }
         .navigationTitle("Convert length")
